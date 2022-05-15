@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OrdiShop</title>
+    <link rel="icon" href="image/pc-monitor.png">
+    <link rel="stylesheet" href="css/indexcss.css" type="text/css" />
+  </head>
+  <body>
+    <!-- راسية الموقع -->
+    <header>
+      <nav>
+          <div class="nav-bar">
+              <i class='bx bx-menu sidebarOpen' ></i>
+              <span class="logo navLogo"><a href="#">OrdiShop</a></span>
+  
+              <div class="menu">
+                <div class="logo-toggle">
+                  <span class="logo"><a href="#">OrdiShop</a></span>
+                  <i class='bx bx-x siderbarClose'></i>
+              </div>
+              <ul class="nav-links">
+                <li><a href="/home.html" id="">Home</a></li>
+                <li><a href="/nos-ordinatour.html">Nos ordinateur</a></li>
+                <li><a href="/nos-coffrets.html">Nos Couffre</a></li>
+                <li><a href="/nos-fourmisseurs.html">Nos Fornisseur</a></li>
+                <li><a href="/qui-sommes.html">Qui sommes Nous</a></li>
+                <li><a href="">blog</a></li>
+                <li class="this"><a href="/blog.html">Espace Client</a></li>
+            </ul>
+              </div>
+  
+              <div class="darkLight-searchBox">
+                  <div class="searchBox">
+                     <div class="searchToggle">
+                      <i class='bx bx-x cancel'></i>
+                      <i class='bx bx-search search'></i>
+                     </div>
+                      <form class="search-field">
+                          <input type="text" placeholder="Search...">
+                          <i class='bx bx-search'></i>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <script src="serch.js"></script>
+      </nav>
+  </header>
+    <section id="espas">
+      <form action="regester.php" method="post"  class="yassne">
+        <div class="titre"><h2>Register</h2></div>
+        <div class="titre">
+          <p>creat your accont .It's free only takes a minute</p>
+        </div>
+        <div>
+          <input type="text"  name="fname" placeholder="First Name" class="notvide text" required/>
+          <input type="text" name="lname" placeholder="Last Name" class="notvide text" required/>
+        </div>
+        <div></div>
+        <div><input type="email" name="email" id="" placeholder="Email" class="notvide" required/></div>
+        <div>
+          <input type="password" name="password" id="" placeholder="Password" class="notvide Password" required onkeyup="verificationPassword()"/>
+        </div>
+        <div>
+          <input type="password" name="" id="" placeholder="Confirm Password" class="notvide Password" required onkeyup="verificationPassword()"/>
+        </div>
+        <div><input type="submit" value="Register" onclick="verificationRegister()"/></div>
+      </form>
+    </section>
+
+
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
