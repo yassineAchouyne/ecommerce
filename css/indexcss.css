@@ -605,24 +605,6 @@ ul{
     width: 100%;
 }
 }
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    width: 230px;
-    padding: 12px 16px;
-    z-index: 1;
-}
-.dropdown-content li a{
-    color: #9e121b;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 /* From uiverse.io by @adamgiebl */
 .cssbuttons-io-button {
     background: #9e121b;
@@ -644,9 +626,9 @@ ul{
     padding-right: 3.3em;
     width: 200px;
     padding:10px;
-   }
-   
-   .cssbuttons-io-button .icon {
+}
+
+.cssbuttons-io-button .icon {
     background: white;
     margin-left: 1em;
     margin: 5px;
@@ -664,19 +646,49 @@ ul{
    
    .cssbuttons-io-button:hover .icon {
     width: calc(100% - 0.6em);
-   }
-   
-   .cssbuttons-io-button .icon svg {
+}
+
+.cssbuttons-io-button .icon svg {
     width: 1.1em;
     transition: transform 0.3s;
     color: #9e121b;
-   }
-   
-   .cssbuttons-io-button:hover .icon svg {
+}
+
+.cssbuttons-io-button:hover .icon svg {
     transform: translateX(0.1em);
-   }
-   
-   .cssbuttons-io-button:active .icon {
+}
+
+.cssbuttons-io-button:active .icon {
     transform: scale(0.95);
-   }
-   
+}
+.menu2{
+    position: fixed;
+    top: 70px;
+    left: 0;
+    background-color: #af3a42;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu2 ul{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.menu2 ul li{
+    /* margin: 10px; */
+    padding: 5px;
+    color: white;
+}
+.menu2 input{
+    width: 14px;
+    height: 14px;
+}
+.menu2 input[type='number']{
+    width: 200px;
+    height: 25px;
+    border-radius: 10px;
+    border: 0;
+}
