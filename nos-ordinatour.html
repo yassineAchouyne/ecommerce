@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
 </head>
     <body>
         
@@ -29,7 +30,7 @@
                     </div>
                     <ul class="nav-links">
                         <li><a href="/home.html" id="">Home</a></li>
-                        <li><a href="/nos-ordinatour.html">Nos ordinateur</a></li>
+                        <li class="this"><a href="/nos-ordinatour.html">Nos ordinateur</a></li>
                         <li><a href="/nos-coffrets.html">Nos Couffre</a></li>
                         <li><a href="/nos-fourmisseurs.html">Nos Fornisseur</a></li>
                         <li><a href="/qui-sommes.html">Qui sommes Nous</a></li>
@@ -50,6 +51,9 @@
                             </form>
                         </div>
                     </div>
+                    <div class="panier">
+                        <i class="fa-solid fa-cart-shopping"></i><span>0</span>
+                    </div>
                 </div>
                 <script src="serch.js"></script>
             </nav>
@@ -58,7 +62,7 @@
                     <li><input type="number" placeholder="Trier par prix" name="prix" id=""></li>
                     <li><input type="checkbox" name="Obureau" id="">Ordinateurs de bureau</li>
                     <li><input type="checkbox" name="Oportable" id="">Ordinateurs portables</li>
-                    <li><input type="checkbox" name="MiniPC" id="">Mini PC</li>
+                    <li><input type="checkbox" name="MiniPC" class="MiniPC" id="">Mini PC</li>
                 </ul>
             </div>
         </header>
@@ -115,8 +119,7 @@
                 </ul>
                 <button class="buy">Buy Now</button>
             </div>
-            <!-- </div>
-            <div class="gallery"> -->
+
             <div class="content">
                 <img src="image/kindpng_4211048.png" />
                 <h3>Hp</h3>

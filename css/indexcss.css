@@ -69,7 +69,19 @@ nav .nav-bar .logo a{
     margin: 0 5px;
     list-style: none;
 }
-
+.panier{
+    color: white;
+}
+.panier span{
+    position: absolute;
+    background-color: #af3a42;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .nav-links li a{
     position: relative;
     font-size: 17px;
@@ -388,15 +400,6 @@ a {
     color: darkblue;
     cursor: pointer;
 }
-
-#home,
-#ordinatour,
-#coffrets,
-#fourmisseurs,
-#sommes,
-#blog {
-    color: #f3f3f3;
-}
 .interface {
     width: 100%;
     height: 500px;
@@ -673,13 +676,14 @@ ul{
     align-items: center;
 }
 .menu2 ul{
-    display: flex;
-    justify-content: space-around;
     width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 .menu2 ul li{
-    /* margin: 10px; */
-    padding: 5px;
+    float: left;
+    padding:0 5px;
+    margin: 0;
     color: white;
 }
 .menu2 input{
@@ -691,4 +695,37 @@ ul{
     height: 25px;
     border-radius: 10px;
     border: 0;
+}
+@media(max-width: 870px){
+    .menu2 ul{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media(max-width: 800px){
+    .menu2 ul{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media(max-width: 713px){
+    .menu2 ul li{
+        font-size: 15px;
+    }
+    .menu2 input[type='number']{
+        width: 150px;
+    }
+}
+@media(max-width: 640px){
+    .menu2 ul li{
+        font-size: 15px;
+    }
+    .menu2 input[type='number']{
+        width: 100px;
+    }
+}
+@media(max-width: 408px){
+    .MiniPC{
+        margin-left: 114px;
+    }
 }
