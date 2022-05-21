@@ -81,6 +81,7 @@ nav .nav-bar .logo a{
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 50%;
 }
 .nav-links li a{
     position: relative;
