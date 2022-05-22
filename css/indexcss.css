@@ -37,7 +37,6 @@ nav .nav-bar{
     align-items: center;
     justify-content: space-between;
 }
-
 nav .nav-bar .sidebarOpen{
     color: #fff;
     font-size: 25px;
@@ -370,23 +369,28 @@ a {
         width: 100%;
     }
 }
-.voirtot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.voirtot a {
-    padding: 10px;
-    width: 100px;
-    background-color: #9e121b;
-    border-radius: 10px;
-    color: white;
-}
+
 #espas {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 560px;
+    background-image: url(/image/RedmiBook-14-Display.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: contact 30s infinite;
+}
+@keyframes contact {
+    33.33% {
+        background-image: url(/image/RedmiBook-14-Full-Keyboard.webp);
+    }
+    66.66% {
+        background-image: url(/image/RedmiBook-14.webp);
+    }
+    100% {
+        background-image: url(/image/RedmiBook-14-Display.webp);
+    }
 }
 .OrdiShop {
     color: #9e121b;
@@ -635,21 +639,20 @@ ul{
 .cssbuttons-io-button .icon {
     background: white;
     margin-left: 1em;
-    margin: 5px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 92%;
     width: 2.2em;
-    border-radius: 0.7em;
+    border-radius: 0.9em;
     box-shadow: 0.1em 0.1em 0.6em 0.2em #9e121b;
-    right: 0.3em;
+    right: 0px;
     transition: all 0.3s;
    }
    
    .cssbuttons-io-button:hover .icon {
-    width: calc(100% - 0.6em);
+    width:100%;
 }
 
 .cssbuttons-io-button .icon svg {
@@ -729,4 +732,14 @@ ul{
     .MiniPC{
         margin-left: 114px;
     }
+}
+.voirtot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.voirtot a {
+    background-color: #9e121b;
+    color: white;
+    height: 45px;
 }
