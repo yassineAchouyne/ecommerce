@@ -7,7 +7,10 @@ body {
     width: 99%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
+::selection{
+    background-color: #ffd705;
+    /* color: black; */
+}
 *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -320,7 +323,11 @@ a {
     text-align: center;
     color: #b2bec3;
     padding: 0 8px;
-    }
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .content h6 {
     font-size: 26px;
     text-align: center;
@@ -374,7 +381,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 560px;
+    height: 555px;
     background-image: url(/image/RedmiBook-14-Display.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -491,7 +498,12 @@ form input[type="submit"] {
     border: 0;
     border-radius: 5px;
 }
-
+#chec{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
 .connect {
     width: 30%;
     margin: auto;
@@ -649,10 +661,11 @@ ul{
     box-shadow: 0.1em 0.1em 0.6em 0.2em #9e121b;
     right: 0px;
     transition: all 0.3s;
+    margin: 5px;
    }
    
    .cssbuttons-io-button:hover .icon {
-    width:100%;
+    width:calc(100% - 10px);
 }
 
 .cssbuttons-io-button .icon svg {

@@ -39,3 +39,18 @@ function panair(){
     var panai=document.getElementById('panier');
     panai.innerHTML++
 }
+var chpass=true;
+function ShowPassword(){
+    var chow=document.getElementsByClassName('Password');
+    if(chpass){
+        for(i=0;i<2;i++){
+            chow[i].type="text";
+        }
+        chpass=false;
+    }else{
+        for(i=0;i<2;i++){
+            chow[i].type="password";
+        }
+        chpass=true;
+    }
+}
