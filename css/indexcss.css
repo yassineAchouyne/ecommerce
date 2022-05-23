@@ -421,6 +421,7 @@ a {
     margin-top: 100px;
 }
 
+
 .interface .OrdiShop {
     color: darkgoldenrod;
 }
@@ -462,6 +463,24 @@ a {
     }
     100% {
         background-image: url(../image/kindpng_4211048.png);
+    }
+}
+@media (max-width:1000px ){
+    .interface{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .interface .bg{
+        margin-top: 100px;
+        height: 500px;
+    }
+}
+@media (max-width:650px ){
+    .interface .bg{
+        margin-top: 100px;
+        height: 100%;
+        width: 100%;
     }
 }
 form {
@@ -713,6 +732,12 @@ ul{
     border-radius: 10px;
     border: 0;
 }
+@media(max-width: 1024px){
+    .menu2 ul{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
 @media(max-width: 870px){
     .menu2 ul{
         margin-left: 0;
@@ -744,6 +769,11 @@ ul{
 @media(max-width: 408px){
     .MiniPC{
         margin-left: 114px;
+    }
+}
+@media(max-width: 320px){
+    .MiniPC{
+        margin-left: 0;
     }
 }
 .voirtot {
