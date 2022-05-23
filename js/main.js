@@ -9,7 +9,6 @@ function verificationRegister(){
     if(cp!=0){
         creatAlert()
     }
-    
 }
 function creatAlert(){
     var prent=document.getElementById('espas');
@@ -52,5 +51,20 @@ function ShowPassword(){
             chow[i].type="password";
         }
         chpass=true;
+    }
+}
+function search(){
+    var parent=document.querySelector('body');
+    var content=parent.getElementsByClassName('content');
+    for(i=0;i<content.length;i++){
+        content[i].style.display="block"
+    }
+    var search=document.getElementById('search');
+    for(i=0;i<content.length;i++){
+        var titre=content[i].getElementsByTagName('h3')[0];
+        // if(titre.innerHTML!=search.value){
+        if(titre.innerHTML.search(search.value)){
+            content[i].style.display="none"
+        }
     }
 }
