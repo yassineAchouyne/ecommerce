@@ -2,8 +2,35 @@ body{
     display: flex;
     justify-content: center;
     align-self: center;
+    background-color: #f3f3f3;
+
 }
 form div{
+    margin: 20px; 
     display: flex;
-    
+    flex-direction: column; 
+}
+form input{
+    color: #9e121b;
+    height:  25px;
+    border-radius: 10px;
+    border: 0.5px solid brown;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+}
+form select{
+    color: #9e121b;
+    border-radius: 10px;
+    border: 0.5px solid brown;
+    height:  30px;
+}
+form label{
+    font-size: 17px;
+    color: #9e121b;
+}
+form input[type="submit"]{
+    background-color: #9e121b;
+    height:  33px;
+    color: white;
 }
