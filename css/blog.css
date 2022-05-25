@@ -159,7 +159,9 @@
     transform: translateY(-2px);
     box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
   }
-  
+  .blog-card:hover .desc{
+    overflow: none;
+  }
   .blog-card-banner { display: none; }
   
   .blog-content-wrapper { padding: 10px 5px; }
