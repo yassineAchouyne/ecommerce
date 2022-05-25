@@ -305,12 +305,16 @@ a {
 }
 .content:hover {
     box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
-    transform: translate(0px, -8px);
+    /* transform: scale(1.005); */
     transition: 0.6s;
 }
 .content:hover p {
     text-decoration: underline;
     color: #9e121b;
+    white-space:inherit;
+    width: 100%;
+    text-overflow: clip;
+    transition: 3s;
 }
 .content img {
     width: 250px;

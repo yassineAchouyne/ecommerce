@@ -68,3 +68,31 @@ function search(){
         }
     }
 }
+function fillter(){
+    var parent=document.querySelector('body');
+    var content=parent.getElementsByClassName('content');
+    var prix=document.getElementById('prix');
+    for(i=0;i<content.length;i++){
+        content[i].style.display="block"
+    }
+    for(i=0;i<content.length;i++){
+        var pr=content[i].getElementsByTagName('h6')[0];
+        if(prix.value!=''){
+            if(pr.innerHTML!=prix.value +' DH'){
+                content[i].style.display="none"
+            }
+        }
+        
+    }
+    for(i=0;i<content.length;i++){
+        var type=content[i].getElementById('type');
+        var Obureau=document.getElementsByName('Obureau')[0];
+        if(Obureau.checked){
+            if(type.value!='Mini PC'){
+                content[i].style.display="none"
+            }
+        }
+    }
+
+
+}
