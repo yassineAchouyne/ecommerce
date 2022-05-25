@@ -12,7 +12,10 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
+    <script src="/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/blog.css">
   </head>
+  <body class="light-theme">
     <!-- راسية الموقع -->
     <header>
       <nav>
@@ -31,8 +34,8 @@
                 <li><a href="/nos-coffrets.html">Nos Couffre</a></li>
                 <li><a href="/nos-fourmisseurs.html">Nos Fornisseur</a></li>
                 <li><a href="/qui-sommes.html">Qui sommes Nous</a></li>
-                <li><a href="">blog</a></li>
-                <li class="this"><a href="/blog.html">Espace Client</a></li>
+                <li class="this"><a href="/blog.html">blog</a></li>
+                <li><a href="/mon-compte.html">Espace Client</a></li>
             </ul>
               </div>
   
@@ -55,33 +58,130 @@
           <script src="serch.js"></script>
       </nav>
   </header>
-    <section id="espas">
-      <form action="regester.php" method="post">
-        <div class="titre"><h2>Register</h2></div>
-        <div class="titre">
-          <p>creat your accont .It's free only takes a minute</p>
-        </div>
-        <div>
-          <input type="text"  name="fname" placeholder="First Name" class="notvide text" required/>
-          <input type="text" name="lname" placeholder="Last Name" class="notvide text" required/>
-        </div>
-        <div></div>
-        <div><input type="email" name="email" id="" placeholder="Email" class="notvide" required/></div>
-        <div>
-          <input type="password" name="password" id="" placeholder="Password" class="notvide Password" required onkeyup="verificationPassword()"/>
-        </div>
-        <div>
-          <input type="password" name="" id="" placeholder="Confirm Password" class="notvide Password" required onkeyup="verificationPassword()"/>
-        </div>
-        <div>
-          <input type="checkbox" name="" id="chec" onclick="ShowPassword()">Show password
-        </div>
-        <div><input type="submit" value="Register" onclick="verificationRegister()"/></div>
-      </form>
-    </section>
 
-
-
-    <script src="/js/main.js"></script>
-  </body>
+    <main>
+  
+      <div class="main">
+  
+        <div class="container">
+  
+  
+          <div class="blog">
+  
+            <h2 class="h2">Latest Blog Post</h2>
+  
+            <div class="blog-card-group">
+  
+              <div class="blog-card">
+  
+                <div class="blog-card-banner">
+                  <img src="/image/RAMinator.png" alt="Building microservices with Dropwizard, MongoDB & Docker"
+                    width="250" class="blog-banner-img">
+                </div>
+  
+                <div class="blog-content-wrapper">
+  
+                  <button class="blog-topic text-tiny">CompuRAM Redaktion</button>
+  
+                  <h3>
+                    <a href="#" class="h3">
+                      Over 90,000 “RAMinator” downloads
+                    </a>
+                  </h3>
+  
+                  <p class="blog-text">
+                    For more than 5 years our popular in-house analysis tool for determining system information for a RAM upgrade is 
+                    available free of charge.
+  
+                  </p>
+  
+                  <div class="wrapper-flex">
+  
+                    
+  
+                    <div class="wrapper">
+  
+                      <p class="text-sm">
+                        <time datetime="2022-01-17">Jan 17, 2022</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT3M">3 min</time>
+                      </p>
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </div>
+              <div class="blog-card">
+  
+                <div class="blog-card-banner">
+                  <img src="/image/ssd.jpg" alt="Building microservices with Dropwizard, MongoDB & Docker"
+                    width="250" class="blog-banner-img">
+                </div>
+  
+                <div class="blog-content-wrapper">
+  
+                  <button class="blog-topic text-tiny">SSD</button>
+  
+                  <h3>
+                    <a href="#" class="h3">
+                      Samsung Server SSD, but which one?
+                    </a>
+                  </h3>
+  
+                  <p class="blog-text">
+                    Samsung offers a variety of SSD, but what are the differences?
+                     And which SSD is best for which requirements? Our...
+  
+                  </p>
+  
+                  <div class="wrapper-flex">
+  
+                    
+  
+                    <div class="wrapper">
+  
+                      <p class="text-sm">
+                        <time datetime="2022-01-17">Jan 17, 2021</time>
+                        <span class="separator"></span>
+                        <ion-icon name="time-outline"></ion-icon>
+                        <time datetime="PT3M">3 min</time>
+                      </p>
+                    </div>
+  
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+  
+            <button class="btn load-more">Load More</button>
+  
+          </div>
+          <div class="aside">
+  
+            <div class="topics">
+  
+              
+            <div class="tags">
+  
+              <h2 class="h2">Tags</h2>
+  
+              <div class="wrapper">
+  
+                <button class="hashtag">#mongodb</button>
+                <button class="hashtag">#nodejs</button>
+                <button class="hashtag">#a11y</button>
+                <button class="hashtag">#mobility</button>
+                <button class="hashtag">#inclusion</button>
+                <button class="hashtag">#webperf</button>
+                <button class="hashtag">#optimize</button>
+                <button class="hashtag">#performance</button>
+  
+              </div>
+  
+            </div>
+  
+</body>
 </html>
