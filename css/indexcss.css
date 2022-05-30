@@ -240,7 +240,10 @@ body.dark .search-field i{
     nav.active .menu{
         left: -0%;
     }
-
+    .nav-bar{
+        justify-content: space-between;
+        
+    }
     nav.active .nav-bar .navLogo a{
         opacity: 0;
         transition: all 0.3s ease;
