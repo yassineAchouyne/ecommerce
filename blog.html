@@ -1,106 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OrdiShop</title>
-    <link rel="icon" href="/image/pc-monitor.png">
-    <link rel="stylesheet" href="/css/indexcss.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/image/pc-monitor.png" />
+    <link rel="stylesheet" href="/css/indexcss.css" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/ee309550fb.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/blog.css" />
   </head>
   <body class="light-theme">
     <!-- راسية الموقع -->
     <header>
       <nav>
-          <div class="nav-bar">
-              <i class='bx bx-menu sidebarOpen' ></i>
-              <span class="logo navLogo"><a href="#">OrdiShop</a></span>
-  
-              <div class="menu">
-                <div class="logo-toggle">
-                  <span class="logo"><a href="#">OrdiShop</a></span>
-                  <i class='bx bx-x siderbarClose'></i>
-              </div>
-              <ul class="nav-links">
-                <li><a href="/home.html" id="">Home</a></li>
-                <li><a href="/nos-ordinatour.html">Nos ordinateur</a></li>
-                <li><a href="/nos-coffrets.html">Nos Couffre</a></li>
-                <li><a href="/nos-fourmisseurs.html">Nos Fornisseur</a></li>
-                <li><a href="/qui-sommes.html">Qui sommes Nous</a></li>
-                <li class="this"><a href="/blog.html">blog</a></li>
-                <li><a href="/mon-compte.html">Espace Client</a></li>
-            </ul>
-              </div>
-  
-              <div class="darkLight-searchBox">
-                  <div class="searchBox">
-                     <div class="searchToggle">
-                      <i class='bx bx-x cancel'></i>
-                      <i class='bx bx-search search'></i>
-                     </div>
-                      <form class="search-field">
-                          <input type="text" placeholder="Search..." id="search">
-                          <i class='bx bx-search' onclick="search()"></i>
-                      </form>
-                  </div>
-                  <div class="panier">
-                    <i class="fa-solid fa-cart-shopping"></i><span id="panier">0</span>
-                </div>
-              </div>
-          </div>
-          <script src="serch.js"></script>
-      </nav>
-  </header>
+        <div class="nav-bar">
+          <i class="bx bx-menu sidebarOpen"></i>
+          <span class="logo navLogo"><a href="#">OrdiShop</a></span>
 
-    <main>
-  
-      <div class="main">
-  
-        <div class="container">
-  
-  
+          <div class="menu">
+            <div class="logo-toggle">
+              <span class="logo"><a href="#">OrdiShop</a></span>
+              <i class="bx bx-x siderbarClose"></i>
+            </div>
+            <ul class="nav-links">
+              <li><a href="/home.html" id="">Home</a></li>
+              <li><a href="/nos-ordinatour.html">Nos ordinateur</a></li>
+              <li><a href="/nos-coffrets.html">Nos Couffre</a></li>
+              <li><a href="/nos-fourmisseurs.html">Nos Fornisseur</a></li>
+              <li><a href="/qui-sommes.html">Qui sommes Nous</a></li>
+              <li class="this"><a href="/blog.html">blog</a></li>
+              <li><a href="/mon-compte.html">Espace Client</a></li>
+            </ul>
+          </div>
+
+          <div class="darkLight-searchBox">
+            <div class="searchBox">
+              <div class="searchToggle">
+                <i class="bx bx-x cancel"></i>
+                <i class="bx bx-search search"></i>
+              </div>
+              <form class="search-field">
+                <input type="text" placeholder="Search..." id="search" />
+                <i class="bx bx-search" onclick="search()"></i>
+              </form>
+            </div>
+            <div class="panier">
+              <i class="fa-solid fa-cart-shopping"></i
+              ><span id="panier">0</span>
+            </div>
+          </div>
+        </div>
+        <script src="/js/serch.js"></script>
+      </nav>
+    </header>
+
+    <main class="main">
+        <div class="container-m">
           <div class="blog">
-  
             <h2 class="h2">Latest Blog Post</h2>
-  
+
             <div class="blog-card-group">
-  
-              <div class="blog-card">
-  
+              <article class="blog-card">
                 <div class="blog-card-banner">
-                  <img src="/image/RAMinator.png" alt="Building microservices with Dropwizard, MongoDB & Docker"
-                    width="250" class="blog-banner-img">
+                  <img
+                    src="/image/RAMinator.png"
+                    alt="Building microservices with Dropwizard, MongoDB & Docker"
+                    width="250"
+                    class="blog-banner-img"
+                  />
                 </div>
-  
+
                 <div class="blog-content-wrapper">
-  
-                  <button class="blog-topic text-tiny">CompuRAM Redaktion</button>
-  
+                  <button class="blog-topic text-tiny">
+                    CompuRAM Redaktion
+                  </button>
+
                   <h3>
                     <a href="#" class="h3">
                       Over 90,000 “RAMinator” downloads
                     </a>
                   </h3>
-  
+
                   <p class="blog-text">
-                    For more than 5 years our popular in-house analysis tool for determining system information for a RAM upgrade is 
+                    For more than 5 years our popular in-house analysis tool for
+                    determining system information for a RAM upgrade is
                     available free of charge.
-  
                   </p>
-  
+
                   <div class="wrapper-flex">
-  
-                    
-  
                     <div class="wrapper">
-  
                       <p class="text-sm">
                         <time datetime="2022-01-17">Jan 17, 2022</time>
                         <span class="separator"></span>
@@ -108,40 +118,36 @@
                         <time datetime="PT3M">3 min</time>
                       </p>
                     </div>
-  
                   </div>
-  
                 </div>
-              </div>
-              <div class="blog-card">
-  
+              </article>
+              <article class="blog-card">
                 <div class="blog-card-banner">
-                  <img src="/image/ssd.jpg" alt="Building microservices with Dropwizard, MongoDB & Docker"
-                    width="250" class="blog-banner-img">
+                  <img
+                    src="/image/ssd.jpg"
+                    alt="Building microservices with Dropwizard, MongoDB & Docker"
+                    width="250"
+                    class="blog-banner-img"
+                  />
                 </div>
-  
+
                 <div class="blog-content-wrapper">
-  
                   <button class="blog-topic text-tiny">SSD</button>
-  
+
                   <h3>
                     <a href="#" class="h3">
                       Samsung Server SSD, but which one?
                     </a>
                   </h3>
-  
+
                   <p class="blog-text">
-                    Samsung offers a variety of SSD, but what are the differences?
-                     And which SSD is best for which requirements? Our...
-  
+                    Samsung offers a variety of SSD, but what are the
+                    differences? And which SSD is best for which requirements?
+                    Our...
                   </p>
-  
+
                   <div class="wrapper-flex">
-  
-                    
-  
                     <div class="wrapper">
-  
                       <p class="text-sm">
                         <time datetime="2022-01-17">Jan 17, 2021</time>
                         <span class="separator"></span>
@@ -149,33 +155,68 @@
                         <time datetime="PT3M">3 min</time>
                       </p>
                     </div>
-  
                   </div>
-  
+                </div>
+              </article>
+            </div>
+
+            <button class="btn load-more">Load More</button>
+          </div>
+          <div class="aside">
+            <div class="topics">
+              <div class="tags">
+                <h2 class="h2">Tags</h2>
+
+                <div class="wrapper">
+                  <button class="hashtag">#CompuRAM Redaktion</button>
+                  <button class="hashtag">#SSD</button>
                 </div>
               </div>
             </div>
-  
-            <button class="btn load-more">Load More</button>
-  
           </div>
-          <div class="aside">
-  
-            <div class="topics">
-  
-              
-            <div class="tags">
-  
-              <h2 class="h2">Tags</h2>
-  
-              <div class="wrapper">
-  
-                <button class="hashtag">#CompuRAM Redaktion</button>
-                <button class="hashtag">#SSD</button>
-  
-              </div>
-  
+        </div>
+    </main>
+    <footer class="footer">
+      <div class="container-m">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Nos ordinateurs</h4>
+            <ul>
+              <li><a href="#">Nos ordinateursde bureau</a></li>
+              <li><a href="#">Mini PC</a></li>
+              <li><a href="#">Ordinatours portables</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Aide</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="/home.html">Mentios légales</a></li>
+              <li><a href="/mon-compte.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>OrdiShop</h4>
+            <ul>
+              <li><a href="#">Presse</a></li>
+              <li><a href="/qui-sommes.html">Qui sommes-nous?</a></li>
+              <li><a href="/blog.html">Plog</a></li>
+              <li><a href="nos-coffrets.html">Nos coffrets</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-  
-</body>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
 </html>

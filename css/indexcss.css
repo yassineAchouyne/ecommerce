@@ -19,7 +19,7 @@ body {
 header{
     height: 70px;
 }
-nav{
+header nav{
     position: fixed;
     top: 0;
     left: 0;
@@ -54,7 +54,11 @@ nav .nav-bar .logo a{
     color: #fff;
     text-decoration: none;
 }
-
+/* .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 .menu .logo-toggle{
     display: none;
 }

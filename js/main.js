@@ -68,6 +68,7 @@ function search(){
         }
     }
 }
+
 function fillter(){
     var parent=document.querySelector('body');
     var content=parent.getElementsByClassName('content');
@@ -82,17 +83,33 @@ function fillter(){
                 content[i].style.display="none"
             }
         }
-        
     }
-    for(i=0;i<content.length;i++){
-        var type=content[i].getElementById('type');
-        var Obureau=document.getElementsByName('Obureau')[0];
-        if(Obureau.checked){
-            if(type.value!='Mini PC'){
+    
+}
+var fillter_portables=true
+
+
+function ordPortables(){
+    var parent=document.querySelector('body');
+    var content=parent.getElementsByClassName('content');
+    var hide=[];
+    if(fillter_portables){
+        for(i=0;i<content.length;i++){
+            var typ=content[i].getElementsByTagName('input');
+            if(typ[0].value != "2"){
                 content[i].style.display="none"
+                hide.push(i)
             }
         }
+        fillter_portables=false
+    }else{
+        for(j=0;j<hide.length;j++){
+            a=hide[j]
+            content[a].style.display="block"
+        }
+        fillter_portables=true
     }
-
-
 }
+
+var fillter_bureau=true
+
