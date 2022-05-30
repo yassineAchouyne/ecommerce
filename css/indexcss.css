@@ -406,7 +406,7 @@ a {
     align-items: center;
     justify-content: center;
     height: 555px;
-    background-image: url(/image/RedmiBook-14-Display.webp);
+    background-image: url(../image/RedmiBook-14-Display.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -414,13 +414,13 @@ a {
 }
 @keyframes contact {
     33.33% {
-        background-image: url(/image/RedmiBook-14-Full-Keyboard.webp);
+        background-image: url(../image/RedmiBook-14-Full-Keyboard.webp);
     }
     66.66% {
-        background-image: url(/image/RedmiBook-14.webp);
+        background-image: url(../image/RedmiBook-14.webp);
     }
     100% {
-        background-image: url(/image/RedmiBook-14-Display.webp);
+        background-image: url(../image/RedmiBook-14-Display.webp);
     }
 }
 .OrdiShop {
