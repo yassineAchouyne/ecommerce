@@ -148,7 +148,8 @@ html {
 }
 
 .blog-card:hover {
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
+  transform: scale(1.05);
   box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
 }
 .blog-card:hover .desc {
