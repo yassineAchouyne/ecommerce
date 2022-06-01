@@ -749,6 +749,17 @@ ul{
     margin: 0;
     color: white;
 }
+.Sorte{
+    border: 0;
+    border-radius: 10px;
+    color: #9e121b;
+    background-color: white;
+    height: 30px;
+    font-size: larger;
+}
+.Sorte:hover{
+    cursor: pointer;
+}
 .menu2 input{
     width: 14px;
     height: 14px;

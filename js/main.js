@@ -84,32 +84,75 @@ function fillter(){
             }
         }
     }
-    
+    odrinateur()
 }
-var fillter_portables=true
 
-
-function ordPortables(){
+function odrinateur(){
     var parent=document.querySelector('body');
     var content=parent.getElementsByClassName('content');
-    var hide=[];
-    if(fillter_portables){
+    var Obureau=document.getElementById('Obureau');
+    var Oportable=document.getElementById('Oportable');
+    var MiniPC=document.getElementById('MiniPC');
+
+    if(Obureau.checked && Oportable.checked && MiniPC.checked){
         for(i=0;i<content.length;i++){
-            var typ=content[i].getElementsByTagName('input');
-            if(typ[0].value != "2"){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="1" && type.value!="2" && type.value!="3"){
                 content[i].style.display="none"
-                hide.push(i)
             }
         }
-        fillter_portables=false
-    }else{
-        for(j=0;j<hide.length;j++){
-            a=hide[j]
-            content[a].style.display="block"
+    }
+    else if(Oportable.checked && MiniPC.checked){
+        for(i=0;i<content.length;i++){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="2" && type.value!="3"){
+                content[i].style.display="none"
+            }
         }
-        fillter_portables=true
+    }
+    else if(Obureau.checked && MiniPC.checked){
+        for(i=0;i<content.length;i++){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="1" && type.value!="3"){
+                content[i].style.display="none"
+            }
+        }
+    }
+    else if(Obureau.checked && Oportable.checked){
+        for(i=0;i<content.length;i++){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="1" && type.value!="2"){
+                content[i].style.display="none"
+            }
+        }
+    }
+    else if(MiniPC.checked){
+        for(i=0;i<content.length;i++){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="3"){
+                content[i].style.display="none"
+            }
+        }
+    }
+    else if(Oportable.checked){
+        for(i=0;i<content.length;i++){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="2"){
+                content[i].style.display="none"
+            }
+        }
+    }
+    else if(Obureau.checked){
+        for(i=0;i<content.length;i++){
+            var type=content[i].getElementsByTagName('input')[0];
+            if(type.value!="1"){
+                content[i].style.display="none"
+            }
+        }
+    }else{
+        for(i=0;i<content.length;i++){
+            content[i].style.display="block"
+        }
     }
 }
-
-var fillter_bureau=true
 
