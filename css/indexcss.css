@@ -796,6 +796,11 @@ ul{
         width: 150px;
     }
 }
+@media(max-width: 467px){
+    .MiniPC {
+        margin-left:114px ;
+    }
+}
 @media(max-width: 640px){
     .menu2 ul li{
         font-size: 15px;
