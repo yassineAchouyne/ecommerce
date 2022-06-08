@@ -84,7 +84,7 @@ function fillter(){
             }
         }
     }
-    odrinateur()
+    // odrinateur()
 }
 
 function odrinateur(){
