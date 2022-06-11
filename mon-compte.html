@@ -56,7 +56,7 @@
       </nav>
   </header>
     <section id="espas">
-      <form action="regester.php" method="post">
+      <form action="php/regester.php" method="post">
         <div class="titre"><h2>Register</h2></div>
         <div class="titre">
           <p>creat your accont .It's free only takes a minute</p>
@@ -71,14 +71,13 @@
           <input type="password" name="password" id="" placeholder="Password" class="notvide Password" required onkeyup="verificationPassword()"/>
         </div>
         <div>
-          <input type="password" name="" id="" placeholder="Confirm Password" class="notvide Password" required onkeyup="verificationPassword()"/>
+          <input type="password" name="cpassword" id="" placeholder="Confirm Password" class="notvide Password" required onkeyup="verificationPassword()"/>
         </div>
         <div>
           <input type="checkbox" name="" id="chec" onclick="ShowPassword()">Show password
         </div>
-        <div><input type="submit" value="Register" onclick="verificationRegister()"/></div>
+        <div><input type="submit" value="Register" name="submit" onclick="verificationRegister()"/></div>
       </form>
-      <a href="/admin/login.php">se connect</a>
     </section>
 
 
