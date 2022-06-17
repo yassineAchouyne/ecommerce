@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OrdiShop</title>
     <link rel="icon" href="image/pc-monitor.png">
-    <link rel="stylesheet" href="css/indexcss.css" type="text/css">
+    <link rel="stylesheet" href="../css/indexcss.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
   </head>
+<body>
     <!-- راسية الموقع -->
     <header>
       <nav>
@@ -26,16 +28,15 @@
                   <i class='bx bx-x siderbarClose'></i>
               </div>
               <ul class="nav-links">
-                <li><a href="index.html" id="">Home</a></li>
-                <li><a href="nos-ordinatour.html">Nos ordinateur</a></li>
-                <li><a href="nos-coffrets.html">Nos Couffre</a></li>
-                <li><a href="nos-fourmisseurs.html">Nos Fornisseur</a></li>
-                <li><a href="qui-sommes.html">Qui sommes Nous</a></li>
-                <li><a href="blog.html">blog</a></li>
-                <li class="this"><a href="mon-compte.html">Espace Client</a></li>
+                <li><a href="index.php" id="">Home</a></li>
+                <li><a href="nos-ordinatour.php">Nos ordinateur</a></li>
+                <li><a href="nos-coffrets.php">Nos Couffre</a></li>
+                <li><a href="nos-fourmisseurs.php">Nos Fornisseur</a></li>
+                <li><a href="qui-sommes.php">Qui sommes Nous</a></li>
+                <li><a href="blog.php">blog</a></li>
+                <li><a href="mon-compte.php">Espace Client</a></li>
             </ul>
               </div>
-  
               <div class="darkLight-searchBox">
                   <div class="searchBox">
                      <div class="searchToggle">
@@ -55,33 +56,3 @@
           <script src="js/serch.js"></script>
       </nav>
   </header>
-    <section id="espas">
-      <form action="php/regester.php" method="post">
-        <div class="titre"><h2>Register</h2></div>
-        <div class="titre">
-          <p>creat your accont .It's free only takes a minute</p>
-        </div>
-        <div>
-          <input type="text"  name="fname" placeholder="First Name" class="notvide text" required/>
-          <input type="text" name="lname" placeholder="Last Name" class="notvide text" required/>
-        </div>
-        <div></div>
-        <div><input type="email" name="email" id="" placeholder="Email" class="notvide" required/></div>
-        <div>
-          <input type="password" name="password" id="" placeholder="Password" class="notvide Password" required onkeyup="verificationPassword()"/>
-        </div>
-        <div>
-          <input type="password" name="cpassword" id="" placeholder="Confirm Password" class="notvide Password" required onkeyup="verificationPassword()"/>
-        </div>
-        <div>
-          <input type="checkbox" name="" id="chec" onclick="ShowPassword()">Show password
-        </div>
-        <div><input type="submit" value="Register" name="submit" onclick="verificationRegister()"/></div>
-      </form>
-    </section>
-
-
-
-    <script src="js/main.js"></script>
-  </body>
-</html>

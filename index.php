@@ -1,67 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrdiShop</title>
-    <link rel="icon" href="image/pc-monitor.png">
-    <link rel="stylesheet" href="css/indexcss.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-  </head>
-<body>
-    <!-- راسية الموقع -->
-    <header>
-      <nav>
-          <div class="nav-bar">
-              <i class='bx bx-menu sidebarOpen' ></i>
-              <span class="logo navLogo"><a href="#">OrdiShop</a></span>
-  
-              <div class="menu">
-                <div class="logo-toggle">
-                  <span class="logo"><a href="#">OrdiShop</a></span>
-                  <i class='bx bx-x siderbarClose'></i>
-              </div>
-              <ul class="nav-links">
-                <li class="this"><a href="index.html" id="">Home</a></li>
-                <li><a href="nos-ordinatour.html">Nos ordinateur</a></li>
-                <li><a href="nos-coffrets.html">Nos Couffre</a></li>
-                <li><a href="nos-fourmisseurs.html">Nos Fornisseur</a></li>
-                <li><a href="qui-sommes.html">Qui sommes Nous</a></li>
-                <li><a href="blog.html">blog</a></li>
-                <li><a href="mon-compte.html">Espace Client</a></li>
-            </ul>
-              </div>
-              <div class="darkLight-searchBox">
-                  <div class="searchBox">
-                     <div class="searchToggle">
-                      <i class='bx bx-x cancel'></i>
-                      <i class='bx bx-search search'></i>
-                     </div>
-                      <form class="search-field">
-                          <input type="text" placeholder="Search..." id="search">
-                          <i class='bx bx-search' onclick="search()"></i>
-                      </form>
-                  </div>
-                  <div class="panier">
-                    <i class="fa-solid fa-cart-shopping"></i><span id="panier">0</span>
-                </div>
-              </div>
-          </div>
-          <script src="js/serch.js"></script>
-      </nav>
-  </header>
+<?php include "inc/header.php" ?>
     <section>
         <div class="interface">
             <div>
               <h1>Vous avez votre demande</h1>
               <p><span class="OrdiShop">Ordi<span>Shop</span></span> La société vous offre les meilleurs ordinateurs <span> Programation</span> , <span>Consiption</span>  et  <span>Des Jeux</span></p>
-              <div><a class="cssbuttons-io-button" href="qui-sommes.html"> En savoir plus
+              <div><a class="cssbuttons-io-button" href="qui-sommes.php"> En savoir plus
                 <div class="icon">
                   <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
                 </div>
@@ -117,7 +60,7 @@
             </div>
           </div>
           
-          <div class="voirtot"><a class="cssbuttons-io-button" href="nos-ordinatour.html"> Voir tout
+          <div class="voirtot"><a class="cssbuttons-io-button" href="nos-ordinatour.php"> Voir tout
             <div class="icon">
               <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
             </div>
@@ -175,7 +118,7 @@
           </div>
 
         </div>
-        <div class="voirtot"> <a class="cssbuttons-io-button" href="nos-coffrets.html"> Voir tout
+        <div class="voirtot"> <a class="cssbuttons-io-button" href="nos-coffrets.php"> Voir tout
           <div class="icon">
             <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
           </div>
@@ -183,48 +126,4 @@
       </div>
        </section>
 
-       <footer class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="footer-col">
-              <h4>Nos ordinateurs</h4>
-              <ul>
-                <li><a href="#">Nos ordinateursde bureau</a></li>
-                <li><a href="#">Mini PC</a></li>
-                <li><a href="#">Ordinatours portables</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>Aide</h4>
-              <ul>
-             <li><a href="#">FAQ</a></li>
-                <li><a href="index.html">Mentios légales</a></li>
-                <li><a href="mon-compte.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-           <h4>OrdiShop</h4>
-              <ul>
-             <li><a href="#">Presse</a></li>
-                <li><a href="qui-sommes.html">Qui sommes-nous?</a></li>
-                <li><a href="blog.html">Plog</a></li>
-                <li><a href="nos-coffrets.html">Nos coffrets</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <h4>follow us</h4>
-              <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-     </footer>
-    
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+<?php include "inc/footer.php" ?>

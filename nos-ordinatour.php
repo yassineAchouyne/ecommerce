@@ -43,15 +43,15 @@
               <i class="bx bx-x siderbarClose"></i>
             </div>
             <ul class="nav-links">
-              <li><a href="index.html" id="">Home</a></li>
+              <li><a href="index.php" id="">Home</a></li>
               <li class="this">
-                <a href="nos-ordinatour.html">Nos ordinateur</a>
+                <a href="nos-ordinatour.php">Nos ordinateur</a>
               </li>
-              <li><a href="nos-coffrets.html">Nos Couffre</a></li>
-              <li><a href="nos-fourmisseurs.html">Nos Fornisseur</a></li>
-              <li><a href="qui-sommes.html">Qui sommes Nous</a></li>
-              <li><a href="blog.html">blog</a></li>
-              <li><a href="mon-compte.html">Espace Client</a></li>
+              <li><a href="nos-coffrets.php">Nos Couffre</a></li>
+              <li><a href="nos-fourmisseurs.php">Nos Fornisseur</a></li>
+              <li><a href="qui-sommes.php">Qui sommes Nous</a></li>
+              <li><a href="blog.php">blog</a></li>
+              <li><a href="mon-compte.php">Espace Client</a></li>
             </ul>
           </div>
           <div class="darkLight-searchBox">
@@ -389,47 +389,4 @@
         
       </section>
     </main>
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            <h4>Nos ordinateurs</h4>
-            <ul>
-              <li><a href="#">Nos ordinateursde bureau</a></li>
-              <li><a href="#">Mini PC</a></li>
-              <li><a href="#">Ordinatours portables</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Aide</h4>
-            <ul>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="index.html">Mentios légales</a></li>
-              <li><a href="mon-compte.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>OrdiShop</h4>
-            <ul>
-              <li><a href="#">Presse</a></li>
-              <li><a href="qui-sommes.html">Qui sommes-nous?</a></li>
-              <li><a href="blog.html">Plog</a></li>
-              <li><a href="nos-coffrets.html">Nos coffrets</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>follow us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-  </body>
-</html>
+    <?php include "inc/footer.php" ?>
