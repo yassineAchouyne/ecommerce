@@ -1,3 +1,24 @@
+<?php 
+include "../inc/db.php";
+if(isset($_POST["ajouter"])){
+    $nom=$_POST['c_name'];
+    $image=$_POST['c_image'];
+    $marque=$_POST['c_marque'];
+    $type=$_POST['c_type'];
+    $prix=$_POST['c_prix'];
+    $description=$_POST['c_description'];
+    try{
+        $sql= $db->prepare("INSERT INTO produits_ordinateur(nom_ordinateur ,img_ordinateur ,marque_ordinateur ,type_ordinateur ,prix_ordinateur ,dscription_ordinateur)  values (:nom,:img,:marque,:typ,:prix,:decs )")  ;
+        $sql ->execute([":nom"=>$nom,":img"=>$image,":marque"=>$marque,":typ"=>$type,":prix"=>$prix,":decs"=>$description ]);
+    }catch(PDOException $e){
+        echo $e->getMessage() ;
+    }
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +61,7 @@
                 <textarea name="c_description" id="" cols="40" rows="10"></textarea>
             </div>
             <div>
-                <input type="submit" value="ajouter un produit">
+                <input type="submit" value="ajouter un produit" name="ajouter">
             </div>
         </form>
         

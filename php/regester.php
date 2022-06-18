@@ -21,7 +21,7 @@
             }else{
                 $insert= "insert into clien(firstName,lastName,email,passworde) values('$fname','$lname','$email','$password')";
                 mysqli_query($conn , $insert);
-                header('/index.php');
+                header("Location: ../index.php");
             }
         }
     }

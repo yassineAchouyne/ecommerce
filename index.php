@@ -81,7 +81,7 @@
               <li><i class="fa fa-star" aria-hidden="true"></i></li>
               <li><i class="fa fa-star" aria-hidden="true"></i></li>
               </ul>
-              <button class="buy">Buy Now</button>
+              <button type="submit" class="buy">Buy Now</button>
           </div>
           <div class="content">
               <img
