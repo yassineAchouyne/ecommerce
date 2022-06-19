@@ -9,8 +9,7 @@
   <link rel="icon" href="image/pc-monitor.png">
   <link rel="stylesheet" href="css/indexcss.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
@@ -51,9 +50,9 @@
               <i class='bx bx-search' onclick="search()"></i>
             </form>
           </div>
-          <div class="panier">
-            <i class="fa-solid fa-cart-shopping"></i><span id="panier">0</span>
-          </div>
+          <a href="../php/panair.php" class="panier">
+            <i class="fa-solid fa-cart-shopping"></i><span id='panier'>0</span>
+          </a>
         </div>
       </div>
       <script src="js/serch.js"></script>
@@ -64,72 +63,32 @@
       <div class="blog">
         <h2 class="h2" style="color:#9e121b">Nos Fornisseur</h2>
         <div class="blog-card-group">
-          <article class="blog-card">
 
-            <div class="blog-card-banner">
-              <img src="image/hp.png" alt="Building microservices with Dropwizard, MongoDB & Docker" width="250"
-                class="blog-banner-img">
-            </div>
-            <div class="blog-content-wrapper">
+          <?php include("inc/db.php");
+          $req = $db->prepare("SELECT * FROM fornisseur");
+          $req->execute();
+          $row = $req->fetchAll();
+          foreach ($row as $val) {
+          ?>
+            <form class="blog-card">
 
-              <h3>
-                <a href="#" class="h3">
-                  Marque HP
-                </a>
-              </h3>
+              <div class="blog-card-banner">
+                <img src="image/<?= $val['img_fornisseur'] ?>" alt="Building microservices with Dropwizard, MongoDB & Docker" width="250" class="blog-banner-img">
+              </div>
+              <div class="blog-content-wrapper">
 
-              <p class="desc">
-                HP (Hewlett-Packard) est une Marque multinationale américaine d’électronique et
-                d'informatique qui fabricante et spécialiste en informatique, les imprimantes, les serveurs et réseaux,
-                le logiciel et le multimédia.
-              </p>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-card-banner">
-              <img src="image/asus.png" alt="Building microservices with Dropwizard, MongoDB & Docker" width="250"
-                class="blog-banner-img">
-            </div>
+                <h3>
+                  <a href="#" class="h3">
+                    <?= $val['nom_fornisseur'] ?>
+                  </a>
+                </h3>
 
-            <div class="blog-content-wrapper">
-
-              <h3>
-                <a href="#" class="h3">
-                  Marque ASUS
-                </a>
-              </h3>
-
-              <p class="desc">
-                Liste de produits de la marque Asus disponibles chez OrdiShop : PC Portable, Ecran et
-                autres articles de bonne qualité à prix raisonnable.
-              </p>
-            </div>
-          </article>
-
-
-          <article class="blog-card">
-
-            <div class="blog-card-banner">
-              <img src="image/dell.png" alt="Building microservices with Dropwizard, MongoDB & Docker" width="250"
-                class="blog-banner-img">
-            </div>
-
-            <div class="blog-content-wrapper">
-
-              <h3>
-                <a href="#" class="h3">
-                  Marque DELL
-                </a>
-              </h3>
-
-              <p class="desc">
-                Liste de produits de la marque Dell disponibles chez OrdiShop : PC portable, Ordinateur bureau, Serveur,
-                Ecran,
-                Moniteur, Barrette mémoire, unité centrale, consommable pour imprimante et autres articles de bonne
-                qualité à prix raisonnable.
-              </p>
-            </div>
-          </article>
+                <p class="desc">
+                  <?= $val['description_fornisseur'] ?>
+                </p>
+              </div>
+            </form>
+          <?php } ?>
 
         </div>
       </div>

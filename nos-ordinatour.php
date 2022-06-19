@@ -1,392 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OrdiShop</title>
-    <link rel="icon" href="image/pc-monitor.png" />
-    <link rel="stylesheet" href="css/indexcss.css" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/ee309550fb.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- راسية الموقع -->
-    <header>
-      <nav>
-        <div class="nav-bar">
-          <i class="bx bx-menu sidebarOpen"></i>
-          <span class="logo navLogo"><a href="#">OrdiShop</a></span>
 
-          <div class="menu">
-            <div class="logo-toggle">
-              <span class="logo"><a href="#">OrdiShop</a></span>
-              <i class="bx bx-x siderbarClose"></i>
-            </div>
-            <ul class="nav-links">
-              <li><a href="index.php" id="">Home</a></li>
-              <li class="this">
-                <a href="nos-ordinatour.php">Nos ordinateur</a>
-              </li>
-              <li><a href="nos-coffrets.php">Nos Couffre</a></li>
-              <li><a href="nos-fourmisseurs.php">Nos Fornisseur</a></li>
-              <li><a href="qui-sommes.php">Qui sommes Nous</a></li>
-              <li><a href="blog.php">blog</a></li>
-              <li><a href="mon-compte.php">Espace Client</a></li>
-            </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrdiShop</title>
+  <link rel="icon" href="image/pc-monitor.png" />
+  <link rel="stylesheet" href="css/indexcss.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-bar">
+        <i class="bx bx-menu sidebarOpen"></i>
+        <span class="logo navLogo"><a href="#">OrdiShop</a></span>
+
+        <div class="menu">
+          <div class="logo-toggle">
+            <span class="logo"><a href="#">OrdiShop</a></span>
+            <i class="bx bx-x siderbarClose"></i>
           </div>
-          <div class="darkLight-searchBox">
-            <div class="searchBox">
-              <div class="searchToggle">
-                <i class="bx bx-x cancel"></i>
-                <i class="bx bx-search search"></i>
-              </div>
-              <form class="search-field">
-                <input type="text" placeholder="Search..." id="search" />
-                <i class="bx bx-search" onclick="search()"></i>
-              </form>
-            </div>
-            <div class="panier">
-              <i class="fa-solid fa-cart-shopping"></i
-              ><span id="panier">0</span>
-            </div>
-          </div>
+          <ul class="nav-links">
+            <li><a href="index.php" id="">Home</a></li>
+            <li class="this">
+              <a href="nos-ordinatour.php">Nos ordinateur</a>
+            </li>
+            <li><a href="nos-coffrets.php">Nos Couffre</a></li>
+            <li><a href="nos-fourmisseurs.php">Nos Fornisseur</a></li>
+            <li><a href="qui-sommes.php">Qui sommes Nous</a></li>
+            <li><a href="blog.php">blog</a></li>
+            <li><a href="mon-compte.php">Espace Client</a></li>
+          </ul>
         </div>
-        <script src="js/serch.js"></script>
-      </nav>
-      <div class="menu2">
-        <ul>
-          <li>
-            <input
-              type="number"
-              placeholder="Trier par prix"
-              name="prix"
-              id="prix"
-              onblur="fillter()"
-            />
-          </li>
-          <li>
-            <input type="checkbox" name="Obureau" id="Obureau" />Ordinateurs de bureau
-          </li>
-          <li>
-            <input type="checkbox" name="Oportable" id="Oportable" "/>Ordinateurs
-            portables
-          </li>
-          <li>
-            <input type="checkbox" name="MiniPC" class="MiniPC" id="MiniPC" "/>Mini PC <button onclick="odrinateur()" class="Sorte">Sorte</button>
-          </li>
-        </ul>
+        <div class="darkLight-searchBox">
+          <div class="searchBox">
+            <div class="searchToggle">
+              <i class="bx bx-x cancel"></i>
+              <i class="bx bx-search search"></i>
+            </div>
+            <form class="search-field">
+              <input type="text" placeholder="Search..." id="search" />
+              <i class="bx bx-search" onclick="search()"></i>
+            </form>
+          </div>
+          <a href="../php/panair.php" class="panier">
+            <i class="fa-solid fa-cart-shopping"></i><span id='panier'>0</span>
+          </a>
+        </div>
       </div>
-    </header>
-    <main>
-      <section>
-        <div class="gallery">
-          <div class="content">
-            <img src="image/mini3.jpg " />
-            <h3>Asus</h3>
+      <script src="js/serch.js"></script>
+    </nav>
+    <div class="menu2">
+      <ul>
+        <li>
+          <input type="number" placeholder="Trier par prix" name="prix" id="prix" onblur="fillter()" />
+        </li>
+        <li>
+          <input type="checkbox" name="Obureau" id="Obureau" />Ordinateurs de bureau
+        </li>
+        <li>
+          <input type="checkbox" name="Oportable" id="Oportable" />Ordinateurs
+          portables
+        </li>
+        <li>
+          <input type="checkbox" name="MiniPC" class="MiniPC" id="MiniPC" />Mini PC <button onclick=" odrinateur()" class="Sorte">Sorte</button>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="gallery">
+        <?php include("inc/db.php");
+        $req = $db->prepare("SELECT * FROM produits_ordinateur");
+        $req->execute();
+        $row = $req->fetchAll();
+        foreach ($row as $val) {
+        ?>
+          <form class="content">
+            <img src="admin/image/<?= $val['img_ordinateur'] ?> " />
+            <h3><?= $val['nom_ordinateur'] ?></h3>
             <p>
-              Asus, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
+              <?= $val['dscription_ordinateur'] ?>
             </p>
-            <h6>749.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="3" />
+            <h6><?= $val['prix_ordinateur'] ?> DH</h6>
+            <input type="hidden" id="typ" value="<?= $val['type_ordinateur'] ?>" />
             <ul>
               <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
             </ul>
-            <button class="buy" onclick="panair()">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/kindpng_4211048.png" />
-            <h3>Hp</h3>
-            <p>
-              HP, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>799.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy" onclick="panair()">Buy Now</button>
-          </div>
-          <div class="content">
-            <img
-              src="image/45-450042_samsung-laptop-laptop-png-transparent-png.jpg"
-            />
-            <h3>Samsung</h3>
-            <p>
-              Samsung Ativ Laptop (Core i5 4th Gen/8 GB/1 TB/Windows 8 1) -
-              NP270E5J-K01US.
-            </p>
-            <h6>154.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/mini3.jpg " />
-            <h3>Asus</h3>
-            <p>
-              Asus, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>749.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="3" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy" onclick="panair()">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/kindpng_450523.png" />
-            <h3>Asus</h3>
-            <p>Asus Travelmate P414-51 14´´ i5-1135G7/16GB/512GB SSD Laptop</p>
-            <h6>200.00 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/bureau3.jpg" />
-            <h3>Acus</h3>
-            <p>
-              Acus, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>3500.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="1" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/kindpng_4211048.png" />
-            <h3>Hp</h3>
-            <p>
-              HP, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>799.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/mini3.jpg " />
-            <h3>Asus</h3>
-            <p>
-              Asus, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>749.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="3" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy" onclick="panair()">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/kindpng_450523.png" />
-            <h3>Asus</h3>
-            <p>Asus Travelmate P414-51 14´´ i5-1135G7/16GB/512GB SSD Laptop</p>
-            <h6>200.00 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/bureau2.jpg" />
-            <h3>Acus</h3>
-            <p>
-              Acus, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>3500.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="1" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img
-              src="image/45-450042_samsung-laptop-laptop-png-transparent-png.jpg"
-            />
-            <h3>Samsung</h3>
-            <p>
-              Samsung Ativ Laptop (Core i5 4th Gen/8 GB/1 TB/Windows 8 1) -
-              NP270E5J-K01US.
-            </p>
-            <h6>154.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/kindpng_4211048.png" />
-            <h3>Hp</h3>
-            <p>
-              HP, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>799.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/bureau1.jpg" />
-            <h3>Hp</h3>
-            <p>
-              HP, 15.6" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,
-              Windows 10.
-            </p>
-            <h6>3400.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="1" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/kindpng_450523.png" />
-            <h3>Asus</h3>
-            <p>Asus Travelmate P414-51 14´´ i5-1135G7/16GB/512GB SSD Laptop</p>
-            <h6>200.00 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img
-              src="image/45-450042_samsung-laptop-laptop-png-transparent-png.jpg"
-            />
-            <h3>Samsung</h3>
-            <p>
-              Samsung Ativ Laptop (Core i5 4th Gen/8 GB/1 TB/Windows 8 1) -
-              NP270E5J-K01US.
-            </p>
-            <h6>154.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="2" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-          <div class="content">
-            <img src="image/bureau4.jpg" />
-            <h3>Samsung</h3>
-            <p>
-              Samsung Ativ Laptop (Core i5 4th Gen/8 GB/1 TB/Windows 8 1) -
-              NP270E5J-K01US.
-            </p>
-            <h6>3500.99 DH</h6>
-            <input type="hidden" name="1" id="typ" value="1" />
-            <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
-            <button class="buy">Buy Now</button>
-          </div>
-        </div>
-        
-      </section>
-    </main>
-    <?php include "inc/footer.php" ?>
+            <button class="buy"><a href="php/panair.php?id=<?= $val['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
+          </form>
+        <?php } ?>
+      </div>
+    </section>
+  </main>
+  <?php include "inc/footer.php" ?>

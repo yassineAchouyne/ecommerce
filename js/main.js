@@ -97,7 +97,7 @@ function odrinateur(){
     if(Obureau.checked && Oportable.checked && MiniPC.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="1" && type.value!="2" && type.value!="3"){
+            if(type.value!="Ordinateurs_de_bureau" && type.value!="Ordinateurs_de_portable" && type.value!="Mini_PC"){
                 content[i].style.display="none"
             }
         }
@@ -105,7 +105,7 @@ function odrinateur(){
     else if(Oportable.checked && MiniPC.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="2" && type.value!="3"){
+            if(type.value!="Ordinateurs_de_portable" && type.value!="Mini_PC"){
                 content[i].style.display="none"
             }
         }
@@ -113,7 +113,7 @@ function odrinateur(){
     else if(Obureau.checked && MiniPC.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="1" && type.value!="3"){
+            if(type.value!="Ordinateurs_de_bureau" && type.value!="Mini_PC"){
                 content[i].style.display="none"
             }
         }
@@ -121,7 +121,7 @@ function odrinateur(){
     else if(Obureau.checked && Oportable.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="1" && type.value!="2"){
+            if(type.value!="Ordinateurs_de_bureau" && type.value!="Ordinateurs_de_portable"){
                 content[i].style.display="none"
             }
         }
@@ -129,7 +129,7 @@ function odrinateur(){
     else if(MiniPC.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="3"){
+            if(type.value!="Mini_PC"){
                 content[i].style.display="none"
             }
         }
@@ -137,7 +137,7 @@ function odrinateur(){
     else if(Oportable.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="2"){
+            if(type.value!="Ordinateurs_de_portable"){
                 content[i].style.display="none"
             }
         }
@@ -145,7 +145,7 @@ function odrinateur(){
     else if(Obureau.checked){
         for(i=0;i<content.length;i++){
             var type=content[i].getElementsByTagName('input')[0];
-            if(type.value!="1"){
+            if(type.value!="Ordinateurs_de_bureau"){
                 content[i].style.display="none"
             }
         }
