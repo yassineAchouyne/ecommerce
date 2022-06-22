@@ -855,7 +855,18 @@ ul{
     color: #9e121b;
 }
 
-
+.Acheter{
+    color: white;
+    background-color: #9e121b;
+    border-radius: 10px;
+    border: 2px solid #9e121b;
+    margin-left: 10px;
+    padding: 5px;
+}
+.Acheter:hover{
+    background-color: transparent;
+    color: #9e121b;
+}
 .tablePanier{
     width: 100%;
     text-align: center;
@@ -876,7 +887,7 @@ ul{
     width: 30%;
 }
 .tablePanier td{
-    width: 20%;
+    width: 23%;
 }
 .tablePanier i{
     color: #9e121b;
