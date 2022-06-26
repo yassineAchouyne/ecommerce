@@ -49,8 +49,16 @@ if(isset($_GET['idSupprim'])){
         <?php $somme+=$val['prix_produit_panier'];}?>
     </table>
     <div>
-        <h3 >total <span style="color: #9e121b;" id="total"><?php echo $somme ." DH"?></span><a href="" class="Acheter"> Acheter</a></h3>
-        
+        <h3 >total 
+            <span style="color: #9e121b;" id="total"><?php echo $somme ." DH"?></span>
+            <?php 
+            $cp=$db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
+            $cp->execute();
+            if($cp->fetchAll()[0]['cp']!=0){
+                echo '<a href="Payment.html" class="Acheter"> Acheter</a>';
+            } 
+            ?>
+        </h3>
     </div>
 </section>
 <?php include "../inc/footer.php" ?>

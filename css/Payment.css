@@ -77,3 +77,8 @@ a:hover{
 .cards img{
     width: 100px;
 }
+.Annuler{
+    background-color: transparent;
+    color: #9e121b;
+    border: 1px solid #9e121b;
+}
