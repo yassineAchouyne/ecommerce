@@ -19,7 +19,6 @@
 
 <section>
   <div class="gallery">
-    <!-- <div class="content"> -->
     <?php include("inc/db.php");
     $req = $db->prepare("SELECT * FROM produits_ordinateur");
     $req->execute();
