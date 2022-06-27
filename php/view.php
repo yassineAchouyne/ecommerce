@@ -1,13 +1,13 @@
+<?php include '../inc/header.php' ?>
 <?php 
 include '../inc/db.php';
+
+if(isset($_GET['id'])){
 $id =$_GET['id'];
 $sql=$db->prepare("SELECT * from produits_ordinateur where id_ordinateur=:id");
 $sql->execute([":id"=>$id]);
 $view=$sql->fetchAll();
 ?>
-
-
-<?php include '../inc/header.php' ?>
 
 <section class="view">
     <div class="imag">
@@ -25,4 +25,4 @@ $view=$sql->fetchAll();
     </div>
 </section>
 
-<?php include '../inc/footer.php' ?>
+<?php } include '../inc/footer.php' ?>
