@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
         $addPaniar = $db->prepare("INSERT INTO produit_panier VALUES(:id,:nom,:img,:prix,:dscription)");
         $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur']]);
     }
-    header("Location: ../nos-ordinatour.php");
+    // header("Location: ../nos-ordinatour.php");
 }
 if(isset($_GET['idSupprim'])){
     $idSupprim=$_GET['idSupprim'];

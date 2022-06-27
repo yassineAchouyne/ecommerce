@@ -20,24 +20,24 @@
 <section>
   <div class="gallery">
     <?php include("inc/db.php");
-    $req = $db->prepare("SELECT * FROM produits_ordinateur");
+    $req = $db->prepare("SELECT * FROM produits_ordinateur limit 3");
     $req->execute();
     $row = $req->fetchAll();
-    for ($val = 0; $val < 3; $val++) {
+    foreach($row as $val){
     ?>
-      <form class="content">
-        <img src="image/<?= $row[$val]['img_ordinateur'] ?> " />
-        <h3><?= $row[$val]['nom_ordinateur'] ?></h3>
-        <p>
-          <?= $row[$val]['dscription_ordinateur'] ?>
-        </p>
-        <h6><?= $row[$val]['prix_ordinateur'] ?> DH</h6>
-        <input type="hidden" id="typ" value="<?= $row[$val]['type_ordinateur'] ?>" />
+      <article class="content">
+        <img src="admin/image/<?= $val['img_ordinateur'] ?> " />
+        <h3><?=$val['nom_ordinateur'] ?></h3>
+        <a href="php/view.php?id=<?= $val['id_ordinateur'] ?>"><p>
+          <?= $val['dscription_ordinateur'] ?>
+        </p></a>
+        <h6><?= $val['prix_ordinateur'] ?> DH</h6>
+        <input type="hidden" id="typ" value="<?= $val['type_ordinateur'] ?>" />
         <ul>
           <li><i class="fa fa-star" aria-hidden="true"></i></li>
         </ul>
-        <button class="buy"><a href="php/panair.php?id=<?= $row[$val]['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
-      </form>
+        <button class="buy"><a href="php/panair.php?id=<?= $val['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
+      </article>
     <?php } ?>
   </div>
 
@@ -49,25 +49,30 @@
         </svg>
       </div>
     </a></div>
+
+
+
+
+
   <div class="gallery">
     <?php include("inc/db.php");
-    $req = $db->prepare("SELECT * FROM nos_couffre");
+    $req = $db->prepare("SELECT * FROM nos_couffre limit 3");
     $req->execute();
     $couffre = $req->fetchAll();
-    for ($val = 0; $val < 3; $val++) {
+      foreach($couffre as $val){
     ?>
-      <form class="content">
-        <img src="admin/image/<?= $couffre[$val]['img_nos_Couffre'] ?> " />
-        <h3><?= $couffre[$val]['nom_nos_Couffre'] ?></h3>
-        <p>
-          <?= $couffre[$val]['description_nos_Couffre'] ?>
-        </p>
-        <h6><?= $couffre[$val]['prix_nos_Couffre'] ?> DH</h6>
+      <article class="content">
+        <img src="admin/image/<?= $val['img_nos_Couffre'] ?> " />
+        <h3><?= $val['nom_nos_Couffre'] ?></h3>
+        <a href="php/viewcoure.php?id=<?= $val['id_nos_Couffre'] ?>"><p>
+        <?= $val['description_nos_Couffre'] ?>
+        </p></a>
+        <h6><?= $val['prix_nos_Couffre'] ?> DH</h6>
         <ul>
           <li><i class="fa fa-star" aria-hidden="true"></i></li>
         </ul>
-        <button class="buy"><a href="php/panair.php?idCouffre=<?= $couffre[$val]['id_nos_Couffre'] ?>" class="panier">Ajouter au panier</a></button>
-      </form>
+        <button class="buy"><a href="php/panair.php?idCouffre=<?= $val['id_nos_Couffre'] ?>" class="panier">Ajouter au panier</a></button>
+      </article>
     <?php } ?>
   </div>
   <div class="voirtot"> <a class="cssbuttons-io-button" href="nos-coffrets.php"> Voir tout

@@ -1,3 +1,10 @@
+<?php
+include "inc/db.php";
+$cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
+$cp->execute();
+$cpp=$cp->fetchAll()[0]['cp'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +58,7 @@
             </form>
           </div>
           <a href="../php/panair.php" class="panier">
-            <i class="fa-solid fa-cart-shopping"></i><span id='panier'>0</span>
+            <i class="fa-solid fa-cart-shopping"></i><span id='panier'><?php echo $cpp ?></span>
           </a>
         </div>
       </div>
@@ -84,19 +91,19 @@
         $row = $req->fetchAll();
         foreach ($row as $val) {
         ?>
-          <form class="content">
+          <article class="content">
             <img src="admin/image/<?= $val['img_ordinateur'] ?> " />
             <h3><?= $val['nom_ordinateur'] ?></h3>
-            <p>
+            <a href="php/view.php?id=<?= $val['id_ordinateur'] ?>"><p>
               <?= $val['dscription_ordinateur'] ?>
-            </p>
+            </p></a>
             <h6><?= $val['prix_ordinateur'] ?> DH</h6>
             <input type="hidden" id="typ" value="<?= $val['type_ordinateur'] ?>" />
             <ul>
               <li><i class="fa fa-star" aria-hidden="true"></i></li>
             </ul>
             <button class="buy"><a href="php/panair.php?id=<?= $val['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
-          </form>
+          </article>
         <?php } ?>
       </div>
     </section>

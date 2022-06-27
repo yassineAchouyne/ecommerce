@@ -1,4 +1,8 @@
 <?php
+include "db.php";
+$cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
+$cp->execute();
+$cpp=$cp->fetchAll()[0]['cp'];
 
 ?>
 <!DOCTYPE html>
@@ -54,7 +58,7 @@
             </form>
           </div>
           <a href="../php/panair.php" class="panier">
-            <i class="fa-solid fa-cart-shopping"></i><span id='panier'>0</span>
+            <i class="fa-solid fa-cart-shopping"></i><span id='panier'><?php echo $cpp ?></span>
           </a>
         </div>
       </div>

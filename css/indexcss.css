@@ -7,14 +7,12 @@ body {
     width: 99%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-/* ::selection{
-    background-color: #ffd705;
-    /* color: black; 
-} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 *{
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.4s ease;;
+    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Fira Sans', sans-serif;
+    transition: all 0.4s ease;
 }
 header{
     height: 70px;
@@ -357,6 +355,9 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.content p:hover{
+    cursor: pointer;
+}
 .content h6 {
     font-size: 26px;
     text-align: center;
@@ -483,7 +484,7 @@ a {
     }
 @keyframes slid {
     20% {
-        background-image: url(../image/2.png);
+        background-image: url(../image/R-removebg-preview.png)
     }
     40% {
         background-image: url(../image/3.png);
@@ -892,4 +893,48 @@ ul{
 .tablePanier i{
     color: #9e121b;
     font-size: 30px;
+}
+
+
+.view{
+    display: flex;
+    margin: 10px;
+    justify-content: space-around;
+}
+.view .imag{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.view h1 ,.view h2{
+    text-align: center;
+}
+.view p{
+    height: 70%;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.view a{
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 66%;
+    padding: 15px;
+    border: 0px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: #9e121b;
+    /* height: 70px;
+    width: 100%;
+    height: 100px; */
 }

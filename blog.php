@@ -1,3 +1,10 @@
+<?php
+include "inc/db.php";
+$cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
+$cp->execute();
+$cpp=$cp->fetchAll()[0]['cp'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +60,7 @@
             </form>
           </div>
           <a href="../php/panair.php" class="panier">
-            <i class="fa-solid fa-cart-shopping"></i><span id='panier'>0</span>
+            <i class="fa-solid fa-cart-shopping"></i><span id='panier'><?php echo $cpp ?></span>
           </a>
         </div>
       </div>
@@ -75,11 +82,11 @@
           ?>
             <article class="blog-card">
               <div class="blog-card-banner">
-                <img src="image/<?= $val['img_blog'] ?>" alt="Building microservices with Dropwizard, MongoDB & Docker" width="250" class="blog-banner-img" />
+                <img src="admin/image/<?= $val['img_blog'] ?>" alt="" width="250" class="blog-banner-img" />
               </div>
 
               <div class="blog-content-wrapper">
-                <button class="blog-topic text-tiny">
+                <button class="blog-topic text-tiny" id="<?= $val['tag_blog'] ?>">
                   <?= $val['tag_blog'] ?>
                 </button>
 
@@ -113,8 +120,15 @@
             <h2 class="h2">Tags</h2>
 
             <div class="wrapper">
-              <button class="hashtag">#CompuRAM Redaktion</button>
-              <button class="hashtag">#SSD</button>
+
+            <?php
+            $tag=$db->prepare("SELECT tag_blog from blog");
+            $tag->execute();
+            $tabtag=$tag->fetchAll();
+            foreach($tabtag as $val){
+            ?>
+              <a class="hashtag" href="#<?= $val['tag_blog'] ?>">#<?= $val['tag_blog'] ?></a>
+            <?php }?>
             </div>
           </div>
         </div>
