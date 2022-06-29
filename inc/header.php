@@ -2,10 +2,12 @@
 
 try{
   include "db.php";
-  if(!empty($_SESSION['id_clien'])){
+  if(isset($_SESSION['id_clien'])){
     $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl");
     $cp->execute([":cl"=>$_SESSION['id_clien']]);
     $cpp=$cp->fetchAll()[0]['cp'];
+}else{
+  $cpp=0;
 }
 
 }catch(PDOException $e){
@@ -71,6 +73,6 @@ try{
           </a>
         </div>
       </div>
-      <script src="js/serch.js"></script>
+      <script src="../js/serch.js"></script>
     </nav>
   </header>
