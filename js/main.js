@@ -34,10 +34,7 @@ function verificationPassword(){
         pass[1].style.backgroundColor="rgba(255, 0, 0, 0.404)";
     }
 }
-function panair(){
-    var panai=document.getElementById('panier');
-    panai.innerHTML++
-}
+
 var chpass=true;
 function ShowPassword(){
     var chow=document.getElementsByClassName('Password');
@@ -84,7 +81,7 @@ function fillter(){
             }
         }
     }
-    // odrinateur()
+    odrinateur()
 }
 
 function odrinateur(){

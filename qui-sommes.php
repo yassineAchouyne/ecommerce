@@ -1,4 +1,6 @@
-<?php include "inc/header.php" ?>
+<?php
+include "inc/session.php";
+include "inc/header.php" ?>
 <main>
   <h1 class="titre_propos">Qui Sommes Nous</h1>
 

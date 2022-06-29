@@ -1,4 +1,5 @@
 <?php
+include "inc/session.php";
 include "inc/db.php";
 $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
 $cp->execute();
@@ -67,7 +68,7 @@ $cpp=$cp->fetchAll()[0]['cp'];
     <div class="menu2">
       <ul>
         <li>
-          <input type="number" placeholder="Trier par prix" name="prix" id="prix" onblur="fillter()" />
+          <input type="number" placeholder="Trier par prix" name="prix" id="prix"  />
         </li>
         <li>
           <input type="checkbox" name="Obureau" id="Obureau" />Ordinateurs de bureau
@@ -77,7 +78,7 @@ $cpp=$cp->fetchAll()[0]['cp'];
           portables
         </li>
         <li>
-          <input type="checkbox" name="MiniPC" class="MiniPC" id="MiniPC" />Mini PC <button onclick=" odrinateur()" class="Sorte">Sorte</button>
+          <input type="checkbox" name="MiniPC" class="MiniPC" id="MiniPC" />Mini PC <button onclick=" fillter()" class="Sorte">Sorte</button>
         </li>
       </ul>
     </div>

@@ -1,4 +1,6 @@
-<?php include "inc/header.php" ?>
+<?php
+include "inc/session.php";
+include "inc/header.php" ?>
 <section>
   <div class="interface">
     <div>

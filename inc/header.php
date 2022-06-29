@@ -1,8 +1,17 @@
 <?php
-include "db.php";
-$cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
-$cp->execute();
-$cpp=$cp->fetchAll()[0]['cp'];
+
+try{
+  include "db.php";
+  if(!empty($_SESSION['id_clien'])){
+    $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl");
+    $cp->execute([":cl"=>$_SESSION['id_clien']]);
+    $cpp=$cp->fetchAll()[0]['cp'];
+}
+
+}catch(PDOException $e){
+
+}
+
 
 ?>
 <!DOCTYPE html>

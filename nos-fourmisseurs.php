@@ -1,4 +1,5 @@
 <?php
+include "inc/session.php";
 include "inc/db.php";
 $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
 $cp->execute();
