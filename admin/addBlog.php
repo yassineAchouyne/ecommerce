@@ -1,3 +1,4 @@
+<?php include "incAdmin/hedear.php" ?>
 <?php 
 include "../inc/db.php";
 if(isset($_POST["ajouter"])){
@@ -30,7 +31,7 @@ if(isset($_POST["ajouter"])){
 
 ?>
 
-<?php include "incAdmin/hedear.php" ?>
+
 <div class="adminbody">
         <form action="" method="post" enctype="multipart/form-data">
             <div>
