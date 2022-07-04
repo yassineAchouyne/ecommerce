@@ -33,8 +33,8 @@ if(empty($_GET['mdf'])){
 </table>
 <?php }else{
 
-$sql=$db->prepare("SELECT * from produits_ordinateur");
-$sql->execute();
+$sql=$db->prepare("SELECT * from produits_ordinateur where id_ordinateur=?");
+$sql->execute([$_GET['mdf']]);
 $tab=$sql->fetch();
 
 ?>

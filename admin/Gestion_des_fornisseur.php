@@ -29,8 +29,8 @@ if (empty($_GET['mdf'])) {
     </table>
 <?php } else {
 
-    $sql = $db->prepare("SELECT * from fornisseur");
-    $sql->execute();
+    $sql = $db->prepare("SELECT * from fornisseur where id_fornisseur=?");
+    $sql->execute([$_GET['mdf']]);
     $tab = $sql->fetch();
 
 ?>

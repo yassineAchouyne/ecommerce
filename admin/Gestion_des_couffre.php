@@ -31,8 +31,8 @@ if(empty($_GET['mdf'])){
 </table>
 <?php }else{
 
-$sql=$db->prepare("SELECT * from nos_couffre");
-$sql->execute();
+$sql=$db->prepare("SELECT * from nos_couffre where id_nos_Couffre=?");
+$sql->execute([$_GET['mdf']]);
 $tab=$sql->fetch();
 
 ?>
