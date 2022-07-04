@@ -41,10 +41,16 @@
                                 Les commande
                             </a>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link  text-light" href="Gestion_des_produits.php">
-                                Gestion des produits
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-togglec text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Gestion de stock 
                             </a>
+                            <ul class="dropdown-menu dropdown-menu bg-cl " aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item" href="Gestion_des_produits.php">GS Produit</a></li>
+                                <li><a class="dropdown-item" href="Gestion_des_couffre.php">GS Couffre</a></li>
+                                <li><a class="dropdown-item" href="Gestion_des_fornisseur.php">GS Fornisseur</a></li>
+                                <li><a class="dropdown-item" href="Gestion_des_blog.php">GS Blog</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

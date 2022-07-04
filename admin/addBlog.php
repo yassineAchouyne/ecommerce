@@ -54,8 +54,6 @@ if(isset($_POST["ajouter"])){
                 <input type="submit" value="ajouter un blog" name="ajouter">
             </div>
         </form>
-        
-
     </div>
 </body>
 </html>
