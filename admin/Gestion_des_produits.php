@@ -47,7 +47,7 @@ $tab=$sql->fetch();
         </div>
         <div>
             <label for="">Photo du ordinateur :</label>
-            <input type="file" name="c_image" value="<?="../admin/image". $tab['img_ordinateur'] ?>" class="form-control">
+            <input type="file" name="c_image" value="image<?= $tab['img_ordinateur'] ?>" class="form-control">
         </div>
         <div>
             <label for="">Marque du ordinateur :</label>
