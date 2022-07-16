@@ -19,8 +19,6 @@ if (isset($_POST['connecter'])) {
 
 ?>
 
-
-
 <?php include "inc/header.php" ?>
 
 <?php
@@ -82,10 +80,92 @@ if (!isset($_SESSION['id_clien'])) {
 
   <?php }
 } else {
+  $sql = $db->prepare("SELECT * from clien where id=?");
+  $sql->execute([$_SESSION['id_clien']]);
+  $tab = $sql->fetch();
+  if(isset($_POST['nomCmplet'])){
+    $req=$db->prepare("UPDATE clien set firstName =? , lastName=? where id=? ");
+    $req->execute([$_POST['firstName'],$_POST['lastName'],$_SESSION['id_clien']]);
+    header("Location:mon-compte.php");
+  }
+
+  if(isset($_POST['vemail'])){
+    $req=$db->prepare("UPDATE clien set email =?  where id=? ");
+    $req->execute([$_POST['email'],$_SESSION['id_clien']]);
+    header("Location:mon-compte.php");
+  }
+
+  if(isset($_POST['mpass'])){
+    $req=$db->prepare("UPDATE clien set passworde =?  where id=? ");
+    $pass=$db->prepare("SELECT count(*) c from clien where passworde=? and id =?");
+    $pass->execute([$_POST['ap'],$_SESSION['id_clien']]);
+    $pp=$pass->fetch();
+    if($pp['c']!=0){
+      if($_POST['np']==$_POST['cp']){
+        $req->execute([$_POST['cp'],$_SESSION['id_clien']]);
+        header("Location:mon-compte.php");
+      }else{
+        echo "<script>alert(erour de Confirmation mot passe)</script>";
+      }
+      
+    }else{
+      echo "<script>alert(erour de mot passe)</script>";
+    }
+    
+    
+    
+  }
+
 
   ?>
-  
+  <section class="profil">
+    <div>
+      <img src="/admin/image/<?= $tab['profil'] ?>" alt="">
+      <h3>votre profil</h3>
+    </div>
+    <div>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+      <form class="was-validated" action="" method="POST">
+        <div class="mb-3 row">
+          <input type="text" class="form-control is-invalid col" id="validationTextarea" name="firstName" value="<?= $tab['firstName'] ?>" required>
+          <input type="text" class="form-control is-invalid col" id="validationTextarea" name="lastName" value="<?= $tab['lastName'] ?>" required>
+          <input type="submit" class="btn btn-primary col-2" name="nomCmplet" value="Modifier">
+        </div>
+      </form>
+
+      <form class="was-validated" action="" method="POST">
+        <div class="mb-3 row">
+          <input type="email" class="form-control is-invalid col" id="validationTextarea" name="email" value="<?= $tab['email'] ?>" required>
+          <input type="submit" class="btn btn-primary  col-2" value="Modifier" name="vemail">
+        </div>
+      </form>
+
+      <form class="was-validated" action="" method="POST">
+        <div class="mb-3 row">
+          <input type="password" name="ap" class="form-control is-invalid col" id="validationTextarea" value="" required placeholder="ancien mot de passe">
+          <span class="col-2"></span>
+        </div>
+        <div class="mb-3 row">
+          <input type="password" name="np" class="form-control is-invalid col" id="validationTextarea" value="" required placeholder="nouveau mot de passe">
+          <span class="col-2"></span>
+        </div>
+        <div class="mb-3 row">
+          <input type="password" name="cp" class="form-control is-invalid col" id="validationTextarea" value="" required placeholder="Confirmation mot de passe">
+          <input type="submit" name="mpass" class="btn btn-primary col-2" value="Modifier">
+        </div>
+      </form>
+
+      <form class="was-validated" action="" method="POST">
+        <div class="mb-3 row">
+          <input type="file" class="form-control col" aria-label="file example" required>
+          <input type="submit" class="btn btn-primary col-2" value="Modifier">
+        </div>
+      </form>
+
+
+    </div>
+  </section>
 <?php
 }
 ?>

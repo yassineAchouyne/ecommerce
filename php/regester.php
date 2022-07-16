@@ -8,6 +8,7 @@
         $email=mysqli_real_escape_string($conn,$_POST["email"]);
         $password=$_POST["password"];
         $cpassword=$_POST["cpassword"];
+        $profil="default.jpg";
 
         $select="select * from clien where email='$email' && passworde='$password' && firstName='$lname' && lastName='$lname' ";
 
@@ -19,7 +20,7 @@
             if($password!= $cpassword){
                 echo "<script>alert ('le mot de passe ne correspond pas ')</script>";
             }else{
-                $insert= "insert into clien(firstName,lastName,email,passworde) values('$fname','$lname','$email','$password')";
+                $insert= "insert into clien(firstName,lastName,email,passworde,profil) values('$fname','$lname','$email','$password','$profil')";
                 mysqli_query($conn , $insert);
                 header("Location: ../mon-compte.php?cle=Register");
             }

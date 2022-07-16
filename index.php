@@ -36,7 +36,24 @@ include "inc/header.php" ?>
         <h6><?= $val['prix_ordinateur'] ?> DH</h6>
         <input type="hidden" id="typ" value="<?= $val['type_ordinateur'] ?>" />
         <ul>
-          <li><i class="fa fa-star" aria-hidden="true"></i></li>
+          <?php 
+          $avg=$db->prepare("SELECT avg(star) my from commentes where id_ordinateur=?");
+          $avg->execute([$val['id_ordinateur']]);
+          $r=$avg->fetch();
+          $rus=$r['my'];
+          
+          for($i=1;$i<=5;$i++){
+            if($i<=$rus){
+              echo "<li><i class='fa fa-star'></i></li>";
+              $d=$i+0.5;
+              $f=$i+1;
+            }elseif($rus>=$d && $rus<=$f)
+              echo"<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+            else echo"<li><i class='fa fa-regular fa-star'></i></li>";
+          }
+            
+          ?>
+          
         </ul>
         <button class="buy"><a href="php/panair.php?id=<?= $val['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
       </article>

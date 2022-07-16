@@ -153,3 +153,14 @@ function odrinateur(){
     }
 }
 
+function star(n){
+    var st=document.querySelectorAll(".comments .stars i");
+    document.getElementById('star').value=n
+    for(i=0;i<5;i++){
+        st[i].className="fa-regular fa-star"
+    }
+    for(i=0;i<n;i++){
+        st[i].className="fa fa-star"
+    }
+    
+}

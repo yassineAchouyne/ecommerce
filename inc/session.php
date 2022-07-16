@@ -4,7 +4,7 @@ if(empty($_SESSION['id_clien'])){
 
 ?>
 
-<meta http-equiv="refresh" content="1;url='../mon-compte.php?cle=Register'">
+<meta http-equiv="refresh" content="0;url='../mon-compte.php?cle=Register'">
 
 <?php
 }else{
