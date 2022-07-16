@@ -83,45 +83,58 @@ if (!isset($_SESSION['id_clien'])) {
   $sql = $db->prepare("SELECT * from clien where id=?");
   $sql->execute([$_SESSION['id_clien']]);
   $tab = $sql->fetch();
-  if(isset($_POST['nomCmplet'])){
-    $req=$db->prepare("UPDATE clien set firstName =? , lastName=? where id=? ");
-    $req->execute([$_POST['firstName'],$_POST['lastName'],$_SESSION['id_clien']]);
+  if (isset($_POST['nomCmplet'])) {
+    $req = $db->prepare("UPDATE clien set firstName =? , lastName=? where id=? ");
+    $req->execute([$_POST['firstName'], $_POST['lastName'], $_SESSION['id_clien']]);
     header("Location:mon-compte.php");
   }
 
-  if(isset($_POST['vemail'])){
-    $req=$db->prepare("UPDATE clien set email =?  where id=? ");
-    $req->execute([$_POST['email'],$_SESSION['id_clien']]);
+  if (isset($_POST['vemail'])) {
+    $req = $db->prepare("UPDATE clien set email =?  where id=? ");
+    $req->execute([$_POST['email'], $_SESSION['id_clien']]);
     header("Location:mon-compte.php");
   }
 
-  if(isset($_POST['mpass'])){
-    $req=$db->prepare("UPDATE clien set passworde =?  where id=? ");
-    $pass=$db->prepare("SELECT count(*) c from clien where passworde=? and id =?");
-    $pass->execute([$_POST['ap'],$_SESSION['id_clien']]);
-    $pp=$pass->fetch();
-    if($pp['c']!=0){
-      if($_POST['np']==$_POST['cp']){
-        $req->execute([$_POST['cp'],$_SESSION['id_clien']]);
-        header("Location:mon-compte.php");
-      }else{
-        echo "<script>alert(erour de Confirmation mot passe)</script>";
+  if (isset($_POST['mpass'])) {
+    $req = $db->prepare("UPDATE clien set passworde =?  where id=? ");
+    $pass = $db->prepare("SELECT count(*) c from clien where passworde=? and id =?");
+    $pass->execute([$_POST['ap'], $_SESSION['id_clien']]);
+    $pp = $pass->fetch();
+    if ($pp['c'] != 0) {
+      if ($_POST['np'] == $_POST['cp']) {
+        $req->execute([$_POST['cp'], $_SESSION['id_clien']]);
+        echo "<div class='alert alert-success' role='alert'>Le mot de passe a été changé avec succès</div>";
+      } else {
+        echo "<div class='alert alert-danger' role='alert'>Erreur de Confirmation mot de passe!</div>";
       }
-      
-    }else{
-      echo "<script>alert(erour de mot passe)</script>";
+    } else {
+      echo "<div class='alert alert-danger' role='alert'>Erreur de mot de passe!</div>";
     }
-    
-    
-    
   }
 
+  if (isset($_POST['prfille'])) {
+    $tmp_image=$_FILES['image'];
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+      copy($tmp_image['tmp_name'],"image\\".$tmp_image['name']);
+  }
+
+    $req = $db->prepare("UPDATE clien set profil =?  where id=? ");
+    $req->execute([$tmp_image['name'], $_SESSION['id_clien']]);
+    header("Location:mon-compte.php");
+  }
+  if(isset($_POST['deconnecter'])){
+    session_unset();
+    header("Location:mon-compte.php?cle=Register");
+  }
 
   ?>
   <section class="profil">
     <div>
       <img src="/admin/image/<?= $tab['profil'] ?>" alt="">
       <h3>votre profil</h3>
+      <form action="" method="post">
+        <input type="submit" class="btn btn-primary" name="deconnecter" value="Se déconnecter">
+      </form>
     </div>
     <div>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -156,10 +169,10 @@ if (!isset($_SESSION['id_clien'])) {
         </div>
       </form>
 
-      <form class="was-validated" action="" method="POST">
+      <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
         <div class="mb-3 row">
-          <input type="file" class="form-control col" aria-label="file example" required>
-          <input type="submit" class="btn btn-primary col-2" value="Modifier">
+          <input type="file" name="image" class="form-control col" aria-label="file example" required>
+          <input type="submit" name="prfille" class="btn btn-primary col-2" value="Modifier">
         </div>
       </form>
 
@@ -171,6 +184,11 @@ if (!isset($_SESSION['id_clien'])) {
 ?>
 
 <script src="js/main.js"></script>
+<style>
+  .alert{
+    width: 100%;
+  }
+</style>
 </body>
 
 </html>

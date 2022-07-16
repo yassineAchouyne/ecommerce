@@ -1,5 +1,5 @@
 <?php
-include "inc/session.php";
+// include "inc/session.php";
  include "inc/header.php" ?>
 <section>
   <div class="gallery">
