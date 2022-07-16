@@ -1,9 +1,13 @@
 <?php
 // include "inc/session.php";
 include "inc/db.php";
-$cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
-$cp->execute();
-$cpp=$cp->fetchAll()[0]['cp'];
+if(isset($_SESSION['id_clien'])){
+  $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl");
+  $cp->execute([":cl"=>$_SESSION['id_clien']]);
+  $cpp=$cp->fetch()['cp'];
+}else{
+$cpp=0;
+}
 
 ?>
 <!DOCTYPE html>
@@ -71,14 +75,14 @@ $cpp=$cp->fetchAll()[0]['cp'];
           <input type="number" placeholder="Trier par prix" name="prix" id="prix"  />
         </li>
         <li>
-          <input type="checkbox" name="Obureau" id="Obureau" />Ordinateurs de bureau
+          <input type="checkbox" name="Obureau" id="Obureau" checked/>Ordinateurs de bureau
         </li>
         <li>
-          <input type="checkbox" name="Oportable" id="Oportable" />Ordinateurs
+          <input type="checkbox" name="Oportable" id="Oportable" checked/>Ordinateurs
           portables
         </li>
         <li>
-          <input type="checkbox" name="MiniPC" class="MiniPC" id="MiniPC" />Mini PC <button onclick=" fillter()" class="Sorte">Sorte</button>
+          <input type="checkbox" name="MiniPC" class="MiniPC" id="MiniPC" checked/>Mini PC <button onclick=" fillter()" class="Sorte">Sorte</button>
         </li>
       </ul>
     </div>
@@ -101,8 +105,26 @@ $cpp=$cp->fetchAll()[0]['cp'];
             <h6><?= $val['prix_ordinateur'] ?> DH</h6>
             <input type="hidden" id="typ" value="<?= $val['type_ordinateur'] ?>" />
             <ul>
-              <li><i class="fa fa-star" aria-hidden="true"></i></li>
-            </ul>
+          <?php 
+          $avg=$db->prepare("SELECT avg(star) my from commentes where id_ordinateur=?");
+          $avg->execute([$val['id_ordinateur']]);
+          $r=$avg->fetch();
+          $rus=$r['my'];
+          $d=1.5;
+          $f=2;
+          for($i=1;$i<=5;$i++){
+            if($i<=$rus){
+              echo "<li><i class='fa fa-star'></i></li>";
+              $d=$i+0.5;
+              $f=$i+1;
+            }elseif($rus>=$d && $rus<=$f)
+              echo"<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+            else echo"<li><i class='fa fa-regular fa-star'></i></li>";
+          }
+            
+          ?>
+          
+        </ul>
             <button class="buy"><a href="php/panair.php?id=<?= $val['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
           </article>
         <?php } ?>

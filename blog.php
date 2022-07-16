@@ -1,9 +1,13 @@
 <?php
 // include "inc/session.php";
 include "inc/db.php";
-$cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier");
-$cp->execute();
-$cpp=$cp->fetchAll()[0]['cp'];
+if(isset($_SESSION['id_clien'])){
+  $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl");
+  $cp->execute([":cl"=>$_SESSION['id_clien']]);
+  $cpp=$cp->fetch()['cp'];
+}else{
+$cpp=0;
+}
 
 ?>
 <!DOCTYPE html>

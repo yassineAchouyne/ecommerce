@@ -130,7 +130,7 @@ if (!isset($_SESSION['id_clien'])) {
   ?>
   <section class="profil">
     <div>
-      <img src="/admin/image/<?= $tab['profil'] ?>" alt="">
+      <img src="image/<?=$tab['profil']?>" alt="">
       <h3>votre profil</h3>
       <form action="" method="post">
         <input type="submit" class="btn btn-primary" name="deconnecter" value="Se déconnecter">

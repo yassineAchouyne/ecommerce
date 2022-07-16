@@ -1,5 +1,5 @@
 <?php
-// include "../inc/session.php";
+include "../inc/session.php";
 include '../inc/header.php';
 
 ?>
@@ -46,7 +46,7 @@ include '../inc/header.php';
             <?php foreach($tab as $val){ ?>
             <article>
                 <div>
-                    <img src="../admin/image/default.jpg" alt="">
+                    <img src="../image/<?=$val['profil']?>" alt="">
                     <h5><?= $val["firstName"]." ".$val["lastName"]?> </h5>
                 </div>
                 <div>
@@ -89,6 +89,7 @@ include '../inc/header.php';
     <?php 
     
     if(isset($_POST['envoyer'])){
+        
         $sql=$db->prepare("INSERT INTO `commentes`(`id_client`, `id_ordinateur`, `commente`, `date_pub`,`star`) VALUES (?,?,?,?,?)");
         $sql->execute([$_SESSION['id_clien'],$_GET['id'],$_POST['val'],date("Y-m-d"),$_POST['star']]);
     }
