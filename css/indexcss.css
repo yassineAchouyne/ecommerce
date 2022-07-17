@@ -1020,3 +1020,23 @@ hr{
     color: #9e121b;
     font-family: 'Courier New', Courier, monospace;
 }
+.profil .deconnect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width: 900px){
+    .profil{
+        display: block;
+    }
+    .profil > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5px;
+    }
+    .profil form{
+        width: 90%;
+    }
+}

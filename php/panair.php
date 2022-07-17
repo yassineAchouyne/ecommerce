@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
         $addPaniar = $db->prepare("INSERT INTO produit_panier VALUES(:id,:nom,:img,:prix,:dscription,:clien)");
         $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'],":clien"=>$_SESSION['id_clien']]);
     }
-    
+    header("Location:panair.php");
 }
 if (isset($_GET['idCouffre'])) {
     $id = $_GET['idCouffre'];

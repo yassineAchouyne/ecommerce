@@ -13,7 +13,7 @@ if(isset($_POST["ajouter"])){
                 
                 copy($tmp_image['tmp_name'],"image\\".$tmp_image['name']);
             }
-            $sql= $db->prepare("INSERT INTO fornisseur(nom_fornisseur ,img_fornisseur ,description_fornisseur)  values (:nom,:img,:decs )")  ;
+            $sql= $db->prepare("INSERT INTO fornisseur(nom_fornisseur ,img_fornisseur ,description_fornisseur)  values (:nom,:img,:decs)")  ;
             $sql ->execute([":nom"=>$nom,":img"=>$tmp_image['name'],":decs"=>$description ]);
             echo '<div class="alert alert-success" role="alert"> Ajouté avec succès!</div>';
         }else {

@@ -94,6 +94,11 @@ if (!isset($_SESSION['id_clien'])) {
     $req->execute([$_POST['email'], $_SESSION['id_clien']]);
     header("Location:mon-compte.php");
   }
+  if (isset($_POST['vadress'])) {
+    $req = $db->prepare("UPDATE clien set adress =?  where id=? ");
+    $req->execute([$_POST['adress'], $_SESSION['id_clien']]);
+    header("Location:mon-compte.php");
+  }
 
   if (isset($_POST['mpass'])) {
     $req = $db->prepare("UPDATE clien set passworde =?  where id=? ");
@@ -130,9 +135,9 @@ if (!isset($_SESSION['id_clien'])) {
   ?>
   <section class="profil">
     <div>
-      <img src="image/<?=$tab['profil']?>" alt="">
       <h3>votre profil</h3>
-      <form action="" method="post">
+      <img src="image/<?=$tab['profil']?>" alt="">
+      <form action="" method="post" class="deconnect">
         <input type="submit" class="btn btn-primary" name="deconnecter" value="Se déconnecter">
       </form>
     </div>
@@ -156,20 +161,27 @@ if (!isset($_SESSION['id_clien'])) {
 
       <form class="was-validated" action="" method="POST">
         <div class="mb-3 row">
-          <input type="password" name="ap" class="form-control is-invalid col" id="validationTextarea" value="" required placeholder="ancien mot de passe">
+          <input type="text" class="form-control is-invalid col" id="validationTextarea" name="adress" value="<?= $tab['adress'] ?>" placeholder="Ajouter votre adresse" required>
+          <input type="submit" class="btn btn-primary  col-2" value="Modifier" name="vadress">
+        </div>
+      </form>
+
+      <form class="" action="" method="POST">
+        <div class="mb-3 row">
+          <input type="password" name="ap" class="form-control  col" id="validationTextarea" value="" required placeholder="ancien mot de passe">
           <span class="col-2"></span>
         </div>
         <div class="mb-3 row">
-          <input type="password" name="np" class="form-control is-invalid col" id="validationTextarea" value="" required placeholder="nouveau mot de passe">
+          <input type="password" name="np" class="form-control  col" id="validationTextarea" value="" required placeholder="nouveau mot de passe">
           <span class="col-2"></span>
         </div>
         <div class="mb-3 row">
-          <input type="password" name="cp" class="form-control is-invalid col" id="validationTextarea" value="" required placeholder="Confirmation mot de passe">
+          <input type="password" name="cp" class="form-control  col" id="validationTextarea" value="" required placeholder="Confirmation mot de passe">
           <input type="submit" name="mpass" class="btn btn-primary col-2" value="Modifier">
         </div>
       </form>
 
-      <form class="was-validated" action="" method="POST" enctype="multipart/form-data">
+      <form class="" action="" method="POST" enctype="multipart/form-data">
         <div class="mb-3 row">
           <input type="file" name="image" class="form-control col" aria-label="file example" required>
           <input type="submit" name="prfille" class="btn btn-primary col-2" value="Modifier">
