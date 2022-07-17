@@ -1,5 +1,6 @@
 <?php
-// include "inc/session.php";
+session_start();
+$_SESSION['url']=$_SERVER['REQUEST_URI'];
  include "inc/header.php" ?>
 <section>
   <div class="gallery">

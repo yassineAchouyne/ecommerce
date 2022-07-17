@@ -12,7 +12,8 @@ if (isset($_GET['id'])) {
         $addPaniar = $db->prepare("INSERT INTO produit_panier VALUES(:id,:nom,:img,:prix,:dscription,:clien)");
         $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'],":clien"=>$_SESSION['id_clien']]);
     }
-    header("Location:panair.php");
+    $url=$_SESSION['url'];
+    header("Location:$url");
 }
 if (isset($_GET['idCouffre'])) {
     $id = $_GET['idCouffre'];
@@ -24,12 +25,16 @@ if (isset($_GET['idCouffre'])) {
         $addPaniar = $db->prepare("INSERT INTO produit_panier VALUES(:id,:nom,:img,:prix,:dscription,:clien)");
         $addPaniar->execute([":id" => $id, ":nom" => $val['nom_nos_Couffre'], ":img" => $val['img_nos_Couffre'], ":prix" => $val['prix_nos_Couffre'], ":dscription" => $val['description_nos_Couffre'],":clien"=>$_SESSION['id_clien']]);
     }
+    $url=$_SESSION['url'];
+    header("Location:$url");
+    
 }
 
 if(isset($_GET['idSupprim'])){
     $idSupprim=$_GET['idSupprim'];
     $supprim=$db->prepare("DELETE FROM produit_panier WHERE id_produit_panier=:supp");
     $supprim->execute([":supp"=>$idSupprim]);
+    header("Location:panair.php");
 }
 
 

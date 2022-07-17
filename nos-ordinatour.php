@@ -1,5 +1,7 @@
 <?php
 // include "inc/session.php";
+session_start();
+$_SESSION['url']=$_SERVER['REQUEST_URI'];
 include "inc/db.php";
 if(isset($_SESSION['id_clien'])){
   $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl");
