@@ -1,5 +1,5 @@
 <?php
-// include "inc/session.php";
+session_start();
 include "inc/header.php" ?>
 <main>
   <h1 class="titre_propos">Qui Sommes Nous</h1>

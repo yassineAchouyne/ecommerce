@@ -4,7 +4,7 @@ if (empty($_SESSION['id_admin'])) {
 
 ?>
 
-    <meta http-equiv="refresh" content="10;url='login.php'">
+    <meta http-equiv="refresh" content="0;url='login.php'">
 
 <?php
 }

@@ -8,6 +8,7 @@
     <title>OrdiShop Admin</title>
     <link rel="icon" href="/image/pc-monitor.png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dash.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/ee309550fb.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -43,7 +44,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-togglec text-light" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Gestion de stock 
+                                Gestion de stock
                             </a>
                             <ul class="dropdown-menu dropdown-menu bg-cl " aria-labelledby="navbarDarkDropdownMenuLink">
                                 <li><a class="dropdown-item" href="Gestion_des_produits.php">GS Produit</a></li>
@@ -55,6 +56,11 @@
                         <li class="nav-item ">
                             <a class="nav-link  text-light" href="addAdmin.php">
                                 Add Admin
+                            </a>
+                        </li>
+                        <li class="nav-item user">
+                            <a class="nav-link  text-light" href="">
+                                <img src="/image/1386f3c1-3ce7-490e-a9dc-d18780c808cc.jpg" alt="">
                             </a>
                         </li>
                     </ul>

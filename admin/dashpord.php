@@ -3,7 +3,7 @@ include "sessionAdmin.php";
 include "incAdmin/hedear.php" ;
 include "../inc/db.php";
 ?>
-<link rel="stylesheet" href="css/dash.css">
+
 
 <body>
         <div class="main">
@@ -30,8 +30,8 @@ include "../inc/db.php";
                     <div>
                         <div class="numbers">
                         <?php 
-                                $sql=$db->prepare("SELECT count(*) cp from produit_panier");
-                                $sql->execute([]);
+                                $sql=$db->prepare("SELECT count(*) cp from produit_panier where statut=?");
+                                $sql->execute(["instance"]);
                                 echo $sql->fetch()['cp'];
                             ?>
                         </div>
@@ -94,7 +94,7 @@ include "../inc/db.php";
 
                         <tbody>
                             <?php 
-                                $sql=$db->prepare("SELECT * from produit_panier p inner join clien c on p.id_clien=c.id");
+                                $sql=$db->prepare("SELECT * from produit_panier p inner join clien c on p.id_clien=c.id ORDER BY p.id desc limit 8 ");
                                 $sql->execute([]);
                                 $tab= $sql->fetchAll();
                                 foreach($tab as $val){
@@ -107,7 +107,7 @@ include "../inc/db.php";
                                 <td><?=$val['firstName']?> <?=$val['lastName']?></td>
                                 <td><?=$val['nom_produit_panier']?></td>
                                 <td><?=$val['prix_produit_panier']?> DH</td>
-                                <td><span class="status instance">instance</span></td>
+                                <td><span class="status <?=$val['statut']?>"><?=$val['statut']?></span></td>
                             </tr>
                             <?php }?>
                             
@@ -123,7 +123,7 @@ include "../inc/db.php";
 
                     <table>
                     <?php 
-                                $sql=$db->prepare("SELECT * from clien ");
+                                $sql=$db->prepare("SELECT * from clien ORDER BY id desc limit 8");
                                 $sql->execute([]);
                                 $tab= $sql->fetchAll();
                                 foreach($tab as $val){

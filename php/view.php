@@ -26,7 +26,7 @@ $_SESSION['url']=$_SERVER['REQUEST_URI'];
         </div>
         <div class="viewprix">
             <h2><?= $view[0]['prix_ordinateur'] ?>DH</h2>
-            <a href="panair.php?id=<?= $view[0]['id_ordinateur'] ?>" class="panier">Ajouter au panier</a>
+            <a href="panair.php?id=<?= $view[0]['id_ordinateur'] ?>" class="panier text-light">Ajouter au panier</a>
         </div>
 
 

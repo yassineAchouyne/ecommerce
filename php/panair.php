@@ -4,26 +4,26 @@ include "../inc/db.php";
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    
+    $stat="instance";
     $select = $db->prepare("SELECT * FROM produits_ordinateur where id_ordinateur=:id");
     $select->execute([":id" => $id]);
     $tabSelect = $select->fetchAll();
     foreach ($tabSelect as $val) {
-        $addPaniar = $db->prepare("INSERT INTO produit_panier VALUES(:id,:nom,:img,:prix,:dscription,:clien)");
-        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'],":clien"=>$_SESSION['id_clien']]);
+        $addPaniar = $db->prepare("INSERT INTO `produit_panier`(`id_produit_panier`, `nom_produit_panier`, `img_produit_panier`, `prix_produit_panier`, `dscription_produit_panier`, `id_clien`, `statut`) values(:id,:nom,:img,:prix,:dscription,:clien,:statut)");
+        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'],":clien"=>$_SESSION['id_clien'],":statut"=>$stat]);
     }
     $url=$_SESSION['url'];
     header("Location:$url");
 }
 if (isset($_GET['idCouffre'])) {
     $id = $_GET['idCouffre'];
-    
+    $stat="instance";
     $select = $db->prepare("SELECT * FROM nos_couffre where id_nos_Couffre=:id");
     $select->execute([":id" => $id]);
     $tabSelect = $select->fetchAll();
     foreach ($tabSelect as $val) {
-        $addPaniar = $db->prepare("INSERT INTO produit_panier VALUES(:id,:nom,:img,:prix,:dscription,:clien)");
-        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_nos_Couffre'], ":img" => $val['img_nos_Couffre'], ":prix" => $val['prix_nos_Couffre'], ":dscription" => $val['description_nos_Couffre'],":clien"=>$_SESSION['id_clien']]);
+        $addPaniar = $db->prepare("INSERT INTO `produit_panier`(`id_produit_panier`, `nom_produit_panier`, `img_produit_panier`, `prix_produit_panier`, `dscription_produit_panier`, `id_clien`, `statut`) values(:id,:nom,:img,:prix,:dscription,:clien,:statut)");
+        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_nos_Couffre'], ":img" => $val['img_nos_Couffre'], ":prix" => $val['prix_nos_Couffre'], ":dscription" => $val['description_nos_Couffre'],":clien"=>$_SESSION['id_clien'],":statut"=>$stat]);
     }
     $url=$_SESSION['url'];
     header("Location:$url");
@@ -32,8 +32,8 @@ if (isset($_GET['idCouffre'])) {
 
 if(isset($_GET['idSupprim'])){
     $idSupprim=$_GET['idSupprim'];
-    $supprim=$db->prepare("DELETE FROM produit_panier WHERE id_produit_panier=:supp");
-    $supprim->execute([":supp"=>$idSupprim]);
+    $supprim=$db->prepare("UPDATE produit_panier SET statut = :st WHERE id=:id");
+    $supprim->execute([":st"=>"revenir",":id"=>$idSupprim]);
     header("Location:panair.php");
 }
 
@@ -51,8 +51,8 @@ if(isset($_GET['idSupprim'])){
             <td>Action</td>
         </tr>
         <?php 
-        $selectPaneir=$db->prepare("SELECT * FROM produit_panier where id_clien=:clien");
-        $selectPaneir->execute([":clien"=>$_SESSION['id_clien']]);
+        $selectPaneir=$db->prepare("SELECT * FROM produit_panier where id_clien=:clien and statut=:st");
+        $selectPaneir->execute([":clien"=>$_SESSION['id_clien'],":st"=>"instance"]);
         $tablePanier=$selectPaneir->fetchAll();
         $somme=0;
         
@@ -64,7 +64,7 @@ if(isset($_GET['idSupprim'])){
             <td><?=$val['nom_produit_panier'] ?></td>
             <td class="prix_prd"><?=$val['prix_produit_panier'] ?> DH</td>
             <td><?=$val['dscription_produit_panier'] ?></td>
-            <td><a href="panair.php?idSupprim=<?= $val['id_produit_panier']?>"><i class="fa-solid fa-xmark"></i></a></td>
+            <td><a href="panair.php?idSupprim=<?= $val['id']?>"><i class="fa-solid fa-xmark"  onclick="return confirm('Voulez-vous supprimer le produit') "></i></a></td>
         </tr>
         <?php $somme+=$val['prix_produit_panier'];}?>
     </table>

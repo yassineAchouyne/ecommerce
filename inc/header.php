@@ -3,8 +3,8 @@
 try{
   include "db.php";
   if(isset($_SESSION['id_clien'])){
-    $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl");
-    $cp->execute([":cl"=>$_SESSION['id_clien']]);
+    $cp = $db->prepare("SELECT COUNT(id_produit_panier) as cp from produit_panier where id_clien=:cl and statut=:st");
+    $cp->execute([":cl"=>$_SESSION['id_clien'],":st"=>"instance"]);
     $cpp=$cp->fetch()['cp'];
 }else{
   $cpp=0;
@@ -69,7 +69,7 @@ try{
             </form>
           </div>
           <a href="../php/panair.php" class="panier">
-            <i class="fa-solid fa-cart-shopping"></i><span id='panier'><?php echo $cpp ?></span>
+            <i class="fa-solid fa-cart-shopping text-light"></i><span id='panier' class="text-light"><?php echo $cpp ?></span>
           </a>
         </div>
       </div>
