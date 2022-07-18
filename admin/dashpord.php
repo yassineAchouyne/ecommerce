@@ -18,7 +18,7 @@ include "../inc/db.php";
                                 echo $sql->fetch()['cp'];
                             ?>
                         </div>
-                        <div class="cardName">tous les clients</div>
+                        <div class="cardName">Clients</div>
                     </div>
 
                     <div class="iconBx">

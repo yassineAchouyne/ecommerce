@@ -11,6 +11,7 @@ if(isset($_POST["ajouter"])){
     $prix=$_POST['c_prix'];
     $description=$_POST['c_description'];
     $tmp_image=$_FILES['c_image'];
+    $quantite=$_POST['quantite'];
     
 
     try{
@@ -18,8 +19,8 @@ if(isset($_POST["ajouter"])){
             if($_SERVER['REQUEST_METHOD']=='POST'){
             copy($tmp_image['tmp_name'],"image\\".$tmp_image['name']);
         }
-        $sql= $db->prepare("INSERT INTO produits_ordinateur(nom_ordinateur ,img_ordinateur ,marque_ordinateur ,type_ordinateur ,prix_ordinateur ,dscription_ordinateur)  values (:nom,:img,:marque,:typ,:prix,:decs )")  ;
-        $sql ->execute([":nom"=>$nom,":img"=>$tmp_image['name'],":marque"=>$marque,":typ"=>$type,":prix"=>$prix,":decs"=>$description ]);
+        $sql= $db->prepare("INSERT INTO `produits_ordinateur`( `nom_ordinateur`, `img_ordinateur`, `marque_ordinateur`, `type_ordinateur`, `quantite`, `prix_ordinateur`, `dscription_ordinateur`) values (:nom,:img,:marque,:typ,:qtt,:prix,:decs )")  ;
+        $sql ->execute([":nom"=>$nom,":img"=>$tmp_image['name'],":marque"=>$marque,":typ"=>$type,":prix"=>$prix,":qtt"=>$quantite,":decs"=>$description ]);
         echo '<div class="alert alert-success" role="alert"> Ajouté avec succès!</div>';
         }else{
            echo '<div class="alert alert-danger" role="alert">Erreur Produit non ajouté!</div>';
@@ -58,6 +59,10 @@ if(isset($_POST["ajouter"])){
                     <option value="Ordinateurs_de_portable">Ordinateurs de portable</option>
                     <option value="Mini_PC">Mini PC</option>
                 </select>
+            </div>
+            <div>
+                <label for="">Quantite du ordinateur :</label>
+                <input type="number" name="quantite" id="" class="form-control">
             </div>
             <div>
                 <label for="">Prix du ordinateur :</label>

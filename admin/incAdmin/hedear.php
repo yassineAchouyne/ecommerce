@@ -53,16 +53,16 @@
                                 <li><a class="dropdown-item" href="Gestion_des_blog.php">GS Blog</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item ">
+                        <!-- <li class="nav-item ">
                             <a class="nav-link  text-light" href="addAdmin.php">
-                                Add Admin
+                                Admin
                             </a>
                         </li>
                         <li class="nav-item user">
                             <a class="nav-link  text-light" href="">
                                 <img src="/image/1386f3c1-3ce7-490e-a9dc-d18780c808cc.jpg" alt="">
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
