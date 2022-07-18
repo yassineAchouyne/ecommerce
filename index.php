@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['url']=$_SERVER['REQUEST_URI'];
+$_SESSION['url']=$_SERVER['REQUEST_URI']; //stocker le url dans session
 include "inc/header.php" ?>
 <section>
   <div class="interface">
@@ -23,6 +23,7 @@ include "inc/header.php" ?>
 <section>
   <div class="gallery">
     <?php include("inc/db.php");
+    //afficher trois produitd ordinateur dans la page home
     $req = $db->prepare("SELECT * FROM produits_ordinateur limit 3");
     $req->execute();
     $row = $req->fetchAll();
@@ -76,6 +77,7 @@ include "inc/header.php" ?>
 
   <div class="gallery">
     <?php include("inc/db.php");
+    //afficher trois produit nos_couffre dans la page home
     $req = $db->prepare("SELECT * FROM nos_couffre limit 3");
     $req->execute();
     $couffre = $req->fetchAll();

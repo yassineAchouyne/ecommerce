@@ -1040,3 +1040,11 @@ hr{
         width: 90%;
     }
 }
+.admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 580px;
+    background-color: #F3F3F3;
+    width: 100%;
+}

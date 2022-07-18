@@ -12,7 +12,9 @@ if (isset($_POST['connecter'])) {
   if ($cp != 0) {
     $a = $clien['id'];
     $_SESSION['id_clien'] = $clien['id'];
-    header("Location:inc/session.php?ses=$a");
+    // header("Location:inc/session.php?ses=$a");
+    $url=$_SESSION['url'];
+    header("Location:$url");
   }
 }
 

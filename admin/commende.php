@@ -1,4 +1,7 @@
-<?php include "incAdmin/hedear.php" ?>
+<?php 
+include "sessionAdmin.php";
+include "incAdmin/hedear.php" ;
+?>
 <h1 align="center" class="text-danger">Table des commende</h1>
 
 <table class='table table-striped mt-2'>

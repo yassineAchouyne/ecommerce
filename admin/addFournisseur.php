@@ -1,4 +1,7 @@
-<?php include "incAdmin/hedear.php" ?>
+<?php 
+include "sessionAdmin.php";
+include "incAdmin/hedear.php" ;
+?>
 <?php 
 include "../inc/db.php";
 if(isset($_POST["ajouter"])){

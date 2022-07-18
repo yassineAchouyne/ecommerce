@@ -19,7 +19,7 @@
     <header class="bg-cl">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="../index.php">Ordichop</a>
+                <a class="navbar-brand text-light" href="dashpord.php">Ordichop</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon text-light"></span>
                 </button>
@@ -51,6 +51,11 @@
                                 <li><a class="dropdown-item" href="Gestion_des_fornisseur.php">GS Fornisseur</a></li>
                                 <li><a class="dropdown-item" href="Gestion_des_blog.php">GS Blog</a></li>
                             </ul>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link  text-light" href="addAdmin.php">
+                                Add Admin
+                            </a>
                         </li>
                     </ul>
                 </div>

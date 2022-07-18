@@ -1,4 +1,7 @@
-<?php include "incAdmin/hedear.php" ?>
+<?php 
+include "sessionAdmin.php";
+include "incAdmin/hedear.php" ;
+?>
 <h1 align="center" class="text-danger">Gestion des Produit</h1>
 <?php
 include "../inc/db.php";
