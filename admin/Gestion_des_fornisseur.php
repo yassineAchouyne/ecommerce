@@ -1,6 +1,6 @@
-<?php 
+<?php
 include "sessionAdmin.php";
-include "incAdmin/hedear.php" ;
+include "incAdmin/hedear.php";
 ?>
 <h1 align="center" class="text-danger">Gestion des Fornisseur</h1>
 <?php
@@ -75,7 +75,7 @@ if (empty($_GET['mdf'])) {
         $mdf = $db->prepare("UPDATE fornisseur
     SET nom_fornisseur=:nom,img_fornisseur=:img,description_fornisseur=:decs 
     WHERE id_fornisseur=:id");
-        $mdf->execute([":nom" => $nom,":img" => $tmp_image['name'],":decs" => $description, ":id" => $m]);
+        $mdf->execute([":nom" => $nom, ":img" => $tmp_image['name'], ":decs" => $description, ":id" => $m]);
     }
 }
 if (isset($_GET['sepp'])) {

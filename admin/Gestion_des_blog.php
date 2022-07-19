@@ -1,6 +1,6 @@
-<?php 
+<?php
 include "sessionAdmin.php";
-include "incAdmin/hedear.php" ;
+include "incAdmin/hedear.php";
 ?>
 <h1 align="center" class="text-danger">Gestion des Blog</h1>
 <?php
@@ -40,7 +40,7 @@ if (empty($_GET['mdf'])) {
 
 ?>
 
-<div class="adminbody">
+    <div class="adminbody">
         <form action="" method="post" enctype="multipart/form-data">
             <div>
                 <label for="">Libellé du Blog :</label>
@@ -74,7 +74,7 @@ if (empty($_GET['mdf'])) {
         $nom = $_POST['c_name'];
         $description = $_POST['c_description'];
         $tmp_image = $_FILES['c_image'];
-        $tag=$_POST['c_tag'];
+        $tag = $_POST['c_tag'];
         $m = $_GET['mdf'];
 
         copy($tmp_image['tmp_name'], "image\\" . $tmp_image['name']);
@@ -82,7 +82,7 @@ if (empty($_GET['mdf'])) {
         $mdf = $db->prepare("UPDATE blog
     SET nom_blog=:nom,img_blog=:img,tag_blog=:tag,description_blog=:decs 
     WHERE id_blog=:id");
-        $mdf->execute([":nom" => $nom,":img" => $tmp_image['name'],":tag"=>$tag,":decs" => $description, ":id" => $m]);
+        $mdf->execute([":nom" => $nom, ":img" => $tmp_image['name'], ":tag" => $tag, ":decs" => $description, ":id" => $m]);
     }
 }
 if (isset($_GET['sepp'])) {

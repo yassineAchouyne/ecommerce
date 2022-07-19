@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['url']=$_SERVER['REQUEST_URI']; //stocker le url dans session
+$_SESSION['url'] = $_SERVER['REQUEST_URI']; //stocker le url dans session
 include "inc/header.php" ?>
 <section>
   <div class="interface">
@@ -27,35 +27,37 @@ include "inc/header.php" ?>
     $req = $db->prepare("SELECT * FROM produits_ordinateur limit 3");
     $req->execute();
     $row = $req->fetchAll();
-    foreach($row as $val){
+    foreach ($row as $val) {
     ?>
       <article class="content">
         <img src="admin/image/<?= $val['img_ordinateur'] ?> " />
-        <h3><?=$val['nom_ordinateur'] ?></h3>
-        <a href="php/view.php?id=<?= $val['id_ordinateur'] ?>"><p>
-          <?= $val['dscription_ordinateur'] ?>
-        </p></a>
+        <h3><?= $val['nom_ordinateur'] ?></h3>
+        <a href="php/view.php?id=<?= $val['id_ordinateur'] ?>">
+          <p>
+            <?= $val['dscription_ordinateur'] ?>
+          </p>
+        </a>
         <h6><?= $val['prix_ordinateur'] ?> DH</h6>
         <input type="hidden" id="typ" value="<?= $val['type_ordinateur'] ?>" />
         <ul>
-          <?php 
-          $avg=$db->prepare("SELECT avg(star) my from commentes where id_ordinateur=?");
+          <?php
+          $avg = $db->prepare("SELECT avg(star) my from commentes where id_ordinateur=?");
           $avg->execute([$val['id_ordinateur']]);
-          $r=$avg->fetch();
-          $rus=$r['my'];
-          
-          for($i=1;$i<=5;$i++){
-            if($i<=$rus){
+          $r = $avg->fetch();
+          $rus = $r['my'];
+
+          for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $rus) {
               echo "<li><i class='fa fa-star'></i></li>";
-              $d=$i+0.5;
-              $f=$i+1;
-            }elseif($rus>=$d && $rus<=$f)
-              echo"<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
-            else echo"<li><i class='fa fa-regular fa-star'></i></li>";
+              $d = $i + 0.5;
+              $f = $i + 1;
+            } elseif ($rus >= $d && $rus <= $f)
+              echo "<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+            else echo "<li><i class='fa fa-regular fa-star'></i></li>";
           }
-            
+
           ?>
-          
+
         </ul>
         <button class="buy"><a href="php/panair.php?id=<?= $val['id_ordinateur'] ?>" class="panier">Ajouter au panier</a></button>
       </article>
@@ -81,34 +83,36 @@ include "inc/header.php" ?>
     $req = $db->prepare("SELECT * FROM nos_couffre limit 3");
     $req->execute();
     $couffre = $req->fetchAll();
-      foreach($couffre as $val){
+    foreach ($couffre as $val) {
     ?>
       <article class="content">
         <img src="admin/image/<?= $val['img_nos_Couffre'] ?> " />
         <h3><?= $val['nom_nos_Couffre'] ?></h3>
-        <a href="php/viewcoure.php?id=<?= $val['id_nos_Couffre'] ?>"><p>
-        <?= $val['description_nos_Couffre'] ?>
-        </p></a>
+        <a href="php/viewcoure.php?id=<?= $val['id_nos_Couffre'] ?>">
+          <p>
+            <?= $val['description_nos_Couffre'] ?>
+          </p>
+        </a>
         <h6><?= $val['prix_nos_Couffre'] ?> DH</h6>
         <ul>
-          <?php 
-          $avg=$db->prepare("SELECT avg(star) my from commentescouffre where id_ordinateur=?");
+          <?php
+          $avg = $db->prepare("SELECT avg(star) my from commentescouffre where id_ordinateur=?");
           $avg->execute([$val['id_nos_Couffre']]);
-          $r=$avg->fetch();
-          $rus=$r['my'];
-          
-          for($i=1;$i<=5;$i++){
-            if($i<=$rus){
+          $r = $avg->fetch();
+          $rus = $r['my'];
+
+          for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $rus) {
               echo "<li><i class='fa fa-star'></i></li>";
-              $d=$i+0.5;
-              $f=$i+1;
-            }elseif($rus>=$d && $rus<=$f)
-              echo"<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
-            else echo"<li><i class='fa fa-regular fa-star'></i></li>";
+              $d = $i + 0.5;
+              $f = $i + 1;
+            } elseif ($rus >= $d && $rus <= $f)
+              echo "<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+            else echo "<li><i class='fa fa-regular fa-star'></i></li>";
           }
-            
+
           ?>
-          
+
         </ul>
         <button class="buy"><a href="php/panair.php?idCouffre=<?= $val['id_nos_Couffre'] ?>" class="panier">Ajouter au panier</a></button>
       </article>

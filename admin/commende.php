@@ -1,6 +1,6 @@
-<?php 
+<?php
 include "sessionAdmin.php";
-include "incAdmin/hedear.php" ;
+include "incAdmin/hedear.php";
 ?>
 <h1 align="center" class="text-danger">Table des commende</h1>
 

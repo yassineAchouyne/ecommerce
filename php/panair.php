@@ -12,10 +12,9 @@ if (isset($_GET['id'])) {
     $tabSelect = $select->fetchAll();
     foreach ($tabSelect as $val) {
         $addPaniar = $db->prepare("INSERT INTO `produit_panier`(`id_produit_panier`, `nom_produit_panier`, `img_produit_panier`, `prix_produit_panier`, `dscription_produit_panier`,`id_clien`,`quantit`, `statut`) values(:id,:nom,:img,:prix,:dscription,:clien,:qt,:statut)");
-        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'], ":clien" => $_SESSION['id_clien'],"qt"=>1 ,":statut" => $stat]);
-
+        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'], ":clien" => $_SESSION['id_clien'], "qt" => 1, ":statut" => $stat]);
     }
-    
+
     $url = $_SESSION['url'];
     header("Location:$url");
 }
@@ -27,7 +26,7 @@ if (isset($_GET['idCouffre'])) {
     $tabSelect = $select->fetchAll();
     foreach ($tabSelect as $val) {
         $addPaniar = $db->prepare("INSERT INTO `produit_panier`(`id_produit_panier`, `nom_produit_panier`, `img_produit_panier`, `prix_produit_panier`, `dscription_produit_panier`, `id_clien`,`quantit`, `statut`) values(:id,:nom,:img,:prix,:dscription,:clien,:qt,:statut)");
-        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_nos_Couffre'], ":img" => $val['img_nos_Couffre'], ":prix" => $val['prix_nos_Couffre'], ":dscription" => $val['description_nos_Couffre'], ":clien" => $_SESSION['id_clien'],":qt"=>1, ":statut" => $stat]);
+        $addPaniar->execute([":id" => $id, ":nom" => $val['nom_nos_Couffre'], ":img" => $val['img_nos_Couffre'], ":prix" => $val['prix_nos_Couffre'], ":dscription" => $val['description_nos_Couffre'], ":clien" => $_SESSION['id_clien'], ":qt" => 1, ":statut" => $stat]);
     }
     $url = $_SESSION['url'];
     header("Location:$url");
@@ -53,11 +52,11 @@ if (isset($_GET['idSupprim'])) {
             <td>Nom de produit</td>
             <td>prix de produit</td>
             <td>description de produit</td>
-            <td></td>
+            <td>Quntité</td>
             <td>Action</td>
         </tr>
         <?php
-        
+
         $selectPaneir = $db->prepare("SELECT * FROM produits_ordinateur po INNER JOIN produit_panier pp  on pp.id_produit_panier = po.id_ordinateur where pp.id_clien=:clien and pp.statut=:st");
         $selectPaneir->execute([":clien" => $_SESSION['id_clien'], ":st" => "instance"]);
         $tablePanier = $selectPaneir->fetchAll();
@@ -73,12 +72,12 @@ if (isset($_GET['idSupprim'])) {
                 <td class="prix_prd"><?= $val['prix_produit_panier'] ?> DH</td>
                 <td><?= $val['dscription_produit_panier'] ?></td>
                 <td>
-                    <input type="range" id="one<?= $val['id'] ?>" min="1" max="<?=$val['quantite']?>" value="<?=$val['quantit']?>" onchange="qantite('one'+<?= $val['id'] ?>,'uno'+<?= $val['id'] ?>,<?= $val['id'] ?>)"/>
-                    <div id="uno<?= $val['id'] ?>"><?=$val['quantit']?></div>
+                    <input type="range" id="one<?= $val['id'] ?>" min="1" max="<?= $val['quantite'] ?>" value="<?= $val['quantit'] ?>" onchange="qantite('one'+<?= $val['id'] ?>,'uno'+<?= $val['id'] ?>,<?= $val['id'] ?>)" />
+                    <div id="uno<?= $val['id'] ?>"><?= $val['quantit'] ?></div>
                 </td>
                 <td><a href="panair.php?idSupprim=<?= $val['id'] ?>"><i class="fa-solid fa-xmark" onclick="return confirm('Voulez-vous supprimer le produit') "></i></a></td>
             </tr>
-        <?php $somme += $val['prix_produit_panier'];
+        <?php $somme += $val['prix_produit_panier'] * $val['quantit'];
         } ?>
     </table>
     <div>

@@ -1,7 +1,7 @@
 <?php
 include "../inc/session.php";
 include '../inc/header.php';
-$_SESSION['url']=$_SERVER['REQUEST_URI']; 
+$_SESSION['url'] = $_SERVER['REQUEST_URI'];
 
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -37,35 +37,34 @@ $_SESSION['url']=$_SERVER['REQUEST_URI'];
     }
     echo " </section>";
     if (isset($_GET['id'])) {
-        $sql=$db->prepare(('SELECT * from clien p inner join commentes c on p.id = c.id_client  
+        $sql = $db->prepare(('SELECT * from clien p inner join commentes c on p.id = c.id_client  
         inner join produits_ordinateur pr on pr.id_ordinateur=c.id_ordinateur
         where pr.id_ordinateur=?'));
         $sql->execute([$_GET['id']]);
-        $tab=$sql->fetchAll();
+        $tab = $sql->fetchAll();
     ?>
         <div class="comments">
-            <?php foreach($tab as $val){ ?>
-            <article>
-                <div>
-                    <img src="../image/<?=$val['profil']?>" alt="">
-                    <h5><?= $val["firstName"]." ".$val["lastName"]?> </h5>
-                </div>
-                <div>
-                <?php 
-                for ($i = 0; $i < 5; $i++){ 
-                        if($i<$val['star']){
-                            echo "<span><i class='fa fa-star' ></i></span>";
-                        }else {
-                            echo "<span><i class='fa-regular fa-star'></i></span>" ;
-                        }
-                    
-                     } ?>
-                    <span> en <?= $val["date_pub"]?></span>
-                </div>
-                <div>
-                    <?= $val["commente"]?>
-                </div>
-            </article>
+            <?php foreach ($tab as $val) { ?>
+                <article>
+                    <div>
+                        <img src="../image/<?= $val['profil'] ?>" alt="">
+                        <h5><?= $val["firstName"] . " " . $val["lastName"] ?> </h5>
+                    </div>
+                    <div>
+                        <?php
+                        for ($i = 0; $i < 5; $i++) {
+                            if ($i < $val['star']) {
+                                echo "<span><i class='fa fa-star' ></i></span>";
+                            } else {
+                                echo "<span><i class='fa-regular fa-star'></i></span>";
+                            }
+                        } ?>
+                        <span> en <?= $val["date_pub"] ?></span>
+                    </div>
+                    <div>
+                        <?= $val["commente"] ?>
+                    </div>
+                </article>
             <?php } ?>
             <hr>
             <form action="" method="post">
@@ -87,12 +86,12 @@ $_SESSION['url']=$_SERVER['REQUEST_URI'];
 
     <?php }
     include '../inc/footer.php' ?>
-    <?php 
-    
-    if(isset($_POST['envoyer'])){
-        
-        $sql=$db->prepare("INSERT INTO `commentes`(`id_client`, `id_ordinateur`, `commente`, `date_pub`,`star`) VALUES (?,?,?,?,?)");
-        $sql->execute([$_SESSION['id_clien'],$_GET['id'],$_POST['val'],date("Y-m-d"),$_POST['star']]);
+    <?php
+
+    if (isset($_POST['envoyer'])) {
+
+        $sql = $db->prepare("INSERT INTO `commentes`(`id_client`, `id_ordinateur`, `commente`, `date_pub`,`star`) VALUES (?,?,?,?,?)");
+        $sql->execute([$_SESSION['id_clien'], $_GET['id'], $_POST['val'], date("Y-m-d"), $_POST['star']]);
     }
-    
+
     ?>

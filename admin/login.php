@@ -2,17 +2,17 @@
 session_start();
 include "../inc/db.php";
 if (isset($_POST['connecter'])) {
-  $email = $_POST['email'];
-  $pass = $_POST['password'];
+    $email = $_POST['email'];
+    $pass = $_POST['password'];
 
-  $sql = $db->prepare("SELECT * from `admin` where email=:email and passworde=:pas");
-  $sql->execute([":email" => $email, ":pas" => $pass]);
-  $cp = $sql->rowCount();
-  $admin = $sql->fetch();
-  if ($cp != 0) {
-    $_SESSION['id_admin'] = $admin['id_admin'];
-    header("Location:dashpord.php");
-  }
+    $sql = $db->prepare("SELECT * from `admin` where email=:email and passworde=:pas");
+    $sql->execute([":email" => $email, ":pas" => $pass]);
+    $cp = $sql->rowCount();
+    $admin = $sql->fetch();
+    if ($cp != 0) {
+        $_SESSION['id_admin'] = $admin['id_admin'];
+        header("Location:dashpord.php");
+    }
 }
 
 ?>
