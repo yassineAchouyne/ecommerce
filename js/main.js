@@ -164,3 +164,10 @@ function star(n){
     }
     
 }
+
+function qantite(r,rus,id){
+    var range=document.getElementById(r).value;
+    var rusult=document.getElementById(rus)
+    rusult.innerHTML=range
+    window.location.href ="../php/changerange.php?id="+id+"&&val="+range
+}
