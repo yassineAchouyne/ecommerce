@@ -1,5 +1,4 @@
 <?php
-
 try{
   include "db.php";
   if(isset($_SESSION['id_clien'])){
