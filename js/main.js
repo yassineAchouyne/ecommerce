@@ -39,13 +39,13 @@ var chpass=true;
 function ShowPassword(){
     var chow=document.getElementsByClassName('Password');
     if(chpass){
-        for(i=0;i<2;i++){
-            chow[i].type="text";
+        for(i=0;i<chow.length;i++){
+            chow[i].type='text';
         }
         chpass=false;
     }else{
         for(i=0;i<2;i++){
-            chow[i].type="password";
+            chow[i].type='password';
         }
         chpass=true;
     }

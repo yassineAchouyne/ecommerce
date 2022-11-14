@@ -94,7 +94,7 @@ include "../inc/db.php";
 
                     <tbody>
                         <?php
-                        $sql = $db->prepare("SELECT * from produit_panier p inner join clien c on p.id_clien=c.id ORDER BY p.id desc limit 8 ");
+                        $sql = $db->prepare("SELECT * from produit_panier p inner join clien c on p.id_clien=c.id ORDER BY p.statut  limit 8 ");
                         $sql->execute([]);
                         $tab = $sql->fetchAll();
                         foreach ($tab as $val) {

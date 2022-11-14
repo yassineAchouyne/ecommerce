@@ -1,27 +1,34 @@
 <?php
-    $conn=mysqli_connect('localhost','root','','ecommerce');
+    // $conn=mysqli_connect('localhost','root','','ecommerce');
+    include "../inc/db.php";
 
 
     if(isset($_POST['submit'])){
-        $fname=mysqli_real_escape_string($conn, $_POST["fname"])   ;
-        $lname=mysqli_real_escape_string($conn,$_POST["lname"]);
-        $email=mysqli_real_escape_string($conn,$_POST["email"]);
+        $fname= $_POST["fname"]   ;
+        $lname=$_POST["lname"];
+        $email=$_POST["email"];
         $password=$_POST["password"];
         $cpassword=$_POST["cpassword"];
         $profil="default.jpg";
 
-        $select="select * from clien where email='$email' && passworde='$password' && firstName='$lname' && lastName='$lname' ";
+        $sql = $db->prepare("SELECT * from clien where email=? && passworde=? && firstName=? && lastName=? ");
+        $sql->execute([$email,$password,$fname,$lname]);
+        $cp = $sql->rowCount();
 
-        $result= mysqli_query($conn, $select);
+        // $select=;
 
-        if(mysqli_num_rows($result)>0){
+        // $result= mysqli_query($conn, $select);
+
+        if($cp>0){
             echo "<script>alert ('email et mot de pass déja exist')</script>";
         }else{
             if($password!= $cpassword){
                 echo "<script>alert ('le mot de passe ne correspond pas ')</script>";
             }else{
-                $insert= "insert into clien(firstName,lastName,email,passworde,profil) values('$fname','$lname','$email','$password','$profil')";
-                mysqli_query($conn , $insert);
+                // $insert= "INSERT into clien(firstName,lastName,email,passworde,profil) values(?,?,?,?,?)";
+                // mysqli_query($conn , $insert);
+                $insert = $db->prepare("INSERT into clien(firstName,lastName,email,passworde,profil) values(?,?,?,?,?)");
+                $insert->execute([$fname,$lname,$email,$password,$profil]);
                 header("Location: ../mon-compte.php?cle=Register");
             }
         }

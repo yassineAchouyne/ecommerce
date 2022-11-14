@@ -1,10 +1,11 @@
 <?php
 session_start();
 include "inc/db.php";
+$err="";
 if (isset($_POST['connecter'])) {
   $email = $_POST['email'];
   $pass = $_POST['password'];
-
+  
   $sql = $db->prepare("SELECT * from clien where email=:email and passworde=:pas");
   $sql->execute([":email" => $email, ":pas" => $pass]);
   $cp = $sql->rowCount();
@@ -15,6 +16,8 @@ if (isset($_POST['connecter'])) {
     // header("Location:inc/session.php?ses=$a");
     $url=$_SESSION['url'];
     header("Location:$url");
+  }else{
+    $err="Il n'y a pas d'utilisateur avec cette information";
   }
 }
 
@@ -49,7 +52,7 @@ if (!isset($_SESSION['id_clien'])) {
           <input type="password" name="cpassword" id="" placeholder="Confirm Password" class="notvide Password" required onkeyup="verificationPassword()" />
         </div>
         <div>
-          <input type="checkbox" name="" id="chec" onclick="ShowPassword()">Show password
+          <input type="checkbox" name="" id="chec" onchange="ShowPassword()">Show password
         </div>
         <div>
           <a href="?cle=Register">Avez-vous un compte ?</a>
@@ -64,6 +67,7 @@ if (!isset($_SESSION['id_clien'])) {
       <form action="" method="post" class="form">
         <div class="titre">
           <h2>Se connecter</h2>
+          <p class="err"><?php echo $err?></p>
         </div>
         <div></div>
         <div><input type="email" name="email" id="" placeholder="Email" class="notvide" required /></div>

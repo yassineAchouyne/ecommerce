@@ -415,7 +415,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 580px;
+    height: 1000px;
     background-image: url(../image/RedmiBook-14-Display.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -1047,4 +1047,10 @@ hr{
     min-height: 580px;
     background-color: #F3F3F3;
     width: 100%;
+}
+.err{
+    color: red;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
 }

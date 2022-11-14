@@ -4,7 +4,7 @@ include "../inc/db.php";
 
 
 
-if (isset($_GET['id'])) {
+if (isset($_GET['id'])){
     $id = $_GET['id'];
     $stat = "instance";
     $select = $db->prepare("SELECT * FROM produits_ordinateur where id_ordinateur=:id");
@@ -14,6 +14,7 @@ if (isset($_GET['id'])) {
         $addPaniar = $db->prepare("INSERT INTO `produit_panier`(`id_produit_panier`, `nom_produit_panier`, `img_produit_panier`, `prix_produit_panier`, `dscription_produit_panier`,`id_clien`,`quantit`, `statut`) values(:id,:nom,:img,:prix,:dscription,:clien,:qt,:statut)");
         $addPaniar->execute([":id" => $id, ":nom" => $val['nom_ordinateur'], ":img" => $val['img_ordinateur'], ":prix" => $val['prix_ordinateur'], ":dscription" => $val['dscription_ordinateur'], ":clien" => $_SESSION['id_clien'], "qt" => 1, ":statut" => $stat]);
     }
+    
 
     $url = $_SESSION['url'];
     header("Location:$url");

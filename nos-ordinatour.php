@@ -93,7 +93,7 @@ $cpp=0;
     <section>
       <div class="gallery">
         <?php include("inc/db.php");
-        $req = $db->prepare("SELECT * FROM produits_ordinateur");
+        $req = $db->prepare("SELECT * FROM produits_ordinateur where quantite>0");
         $req->execute();
         $row = $req->fetchAll();
         foreach ($row as $val) {
@@ -117,10 +117,7 @@ $cpp=0;
           for($i=1;$i<=5;$i++){
             if($i<=$rus){
               echo "<li><i class='fa fa-star'></i></li>";
-              $d=$i+0.5;
-              $f=$i+1;
-            }elseif($rus>=$d && $rus<=$f)
-              echo"<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+             }
             else echo"<li><i class='fa fa-regular fa-star'></i></li>";
           }
             

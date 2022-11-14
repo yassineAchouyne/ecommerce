@@ -49,10 +49,7 @@ include "inc/header.php" ?>
           for ($i = 1; $i <= 5; $i++) {
             if ($i <= $rus) {
               echo "<li><i class='fa fa-star'></i></li>";
-              $d = $i + 0.5;
-              $f = $i + 1;
-            } elseif ($rus >= $d && $rus <= $f)
-              echo "<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+            } 
             else echo "<li><i class='fa fa-regular fa-star'></i></li>";
           }
 
@@ -104,10 +101,7 @@ include "inc/header.php" ?>
           for ($i = 1; $i <= 5; $i++) {
             if ($i <= $rus) {
               echo "<li><i class='fa fa-star'></i></li>";
-              $d = $i + 0.5;
-              $f = $i + 1;
-            } elseif ($rus >= $d && $rus <= $f)
-              echo "<li><i class='fa fa-solid fa-star-half-stroke'></i></li>";
+            } 
             else echo "<li><i class='fa fa-regular fa-star'></i></li>";
           }
 
@@ -129,4 +123,4 @@ include "inc/header.php" ?>
   </div>
 </section>
 
-<?php include "inc/footer.php" ?>
+<?php include "inc/footer.php" ?> 

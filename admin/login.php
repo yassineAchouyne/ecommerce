@@ -45,6 +45,7 @@ if (isset($_POST['connecter'])) {
             <div><input type="submit" value="Se connecter" name="connecter" /></div>
         </form>
     </section>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
