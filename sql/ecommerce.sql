@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 19 juil. 2022 à 09:39
+-- Généré le : lun. 14 nov. 2022 à 14:21
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -83,9 +83,9 @@ CREATE TABLE IF NOT EXISTS `clien` (
   `email` varchar(100) DEFAULT NULL,
   `passworde` varchar(45) DEFAULT NULL,
   `profil` varchar(1000) NOT NULL,
-  `adress` varchar(200) NOT NULL,
+  `adress` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `clien`
@@ -93,8 +93,10 @@ CREATE TABLE IF NOT EXISTS `clien` (
 
 INSERT INTO `clien` (`id`, `firstName`, `lastName`, `email`, `passworde`, `profil`, `adress`) VALUES
 (1, 'YASSINE', 'ACHOUYNE', 'achouyne.yassine@ofppt-edu.ma', 'yassine', 'LGGENE.jpg', 'Safi'),
-(2, 'Yassine', 'Achouyne', 'yachouyne@gmail.com', '123', 'default.jpg', ''),
-(3, 'ali', 'radi', 'ali@gmail.com', 'ali', 'PC.jpg', '');
+(2, 'Yassine', 'Achouyne', 'yachouyne@gmail.com', '123', 'pngwing.com (1).png', 'safi'),
+(3, 'ali', 'radi', 'ali@gmail.com', 'ali', 'PC.jpg', ''),
+(4, 'TAHA', 'WAHAB', '19xmax2005@gmai.com', 'taha', 'i.png', 'casa'),
+(5, 'hamza', 'neggar', 'hamza@gmail.com', 'adil', 'skull (2).png', NULL);
 
 -- --------------------------------------------------------
 
@@ -141,7 +143,14 @@ INSERT INTO `commentes` (`id_client`, `id_ordinateur`, `commente`, `date_pub`, `
 (1, 15, 'a', '2022-07-16', 5),
 (1, 15, 'b', '2022-07-16', 4),
 (1, 18, 'c', '2022-07-16', 4),
-(3, 14, 'read', '2022-07-16', 2);
+(3, 14, 'read', '2022-07-16', 2),
+(1, 14, 'comment 15', '2022-07-19', 3),
+(1, 15, 'comment 1', '2022-07-20', 1),
+(4, 19, 'coments', '2022-08-15', 1),
+(1, 18, 'coment 1', '2022-08-16', 1),
+(1, 29, 'comment 1', '2022-09-12', 2),
+(2, 17, 'asus', '2022-11-14', 1),
+(2, 17, 'asus2', '2022-11-14', 2);
 
 -- --------------------------------------------------------
 
@@ -206,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `nos_couffre` (
   `prix_nos_Couffre` int(11) NOT NULL,
   `description_nos_Couffre` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_nos_Couffre`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `nos_couffre`
@@ -234,22 +243,21 @@ CREATE TABLE IF NOT EXISTS `produits_ordinateur` (
   `prix_ordinateur` int(11) NOT NULL,
   `dscription_ordinateur` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_ordinateur`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `produits_ordinateur`
 --
 
 INSERT INTO `produits_ordinateur` (`id_ordinateur`, `nom_ordinateur`, `img_ordinateur`, `marque_ordinateur`, `type_ordinateur`, `quantite`, `prix_ordinateur`, `dscription_ordinateur`) VALUES
-(15, 'Hp', 'kindpng_4211048.png', 'Hp', 'Ordinateurs_de_portable', 5, 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n'),
-(14, 'Asus', 'mini3.jpg', 'Asus', 'Mini_PC', 3, 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n'),
+(14, 'Asus', 'mini3.jpg', 'Asus', 'Mini_PC', 5, 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n'),
 (17, 'Asus', 'kindpng_450523.png', 'Asus', 'Ordinateurs_de_portable', 2, 2000, 'Asus Travelmate P414-51 14Â´Â´ i51135G7/16GB/512GB SSD Laptop'),
 (18, 'Acus', 'bureau3.jpg', 'Acus', 'Ordinateurs_de_bureau', 1, 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n'),
 (19, 'Acus', 'bureau2.jpg', 'Acus', 'Ordinateurs_de_bureau', 10, 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n'),
-(20, 'Hp', 'bureau1.jpg', 'Hp', 'Ordinateurs_de_bureau', 8, 3400, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,\r\n              Windows 10.\r\n'),
-(22, 'Hp', '81aANc5rI7L._AC_UY218_.jpg', 'Hp', 'Ordinateurs_de_portable', 6, 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n'),
-(23, 'Dell', 'R.jpg', 'Dell', 'Ordinateurs_de_portable', 1, 16590, 'PC Portable Dell Latitude 5420 i7-1185G7 14â€³ 16Gb 512Go SSD (N032L542014EMEA)'),
-(29, 'Samsung ', '45-450042_samsung-laptop-laptop-png-transparent-png.jpg', 'Samsung', 'Ordinateurs_de_portable', 5, 3000, '15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.');
+(20, 'Hp', 'bureau1.jpg', 'Hp', 'Ordinateurs_de_bureau', 7, 3400, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,\r\n              Windows 10.\r\n'),
+(22, 'Hp', '81aANc5rI7L._AC_UY218_.jpg', 'Hp', 'Ordinateurs_de_portable', 5, 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n'),
+(23, 'Dell', 'R.jpg', 'Dell', 'Ordinateurs_de_portable', 2, 16590, 'PC Portable Dell Latitude 5420 i7-1185G7 14â€³ 16Gb 512Go SSD (N032L542014EMEA)'),
+(29, 'Samsung ', '45-450042_samsung-laptop-laptop-png-transparent-png.jpg', 'Samsung', 'Ordinateurs_de_portable', 4, 3000, '15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.');
 
 -- --------------------------------------------------------
 
@@ -270,35 +278,42 @@ CREATE TABLE IF NOT EXISTS `produit_panier` (
   `statut` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_clien` (`id_clien`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `produit_panier`
 --
 
 INSERT INTO `produit_panier` (`id`, `id_produit_panier`, `nom_produit_panier`, `img_produit_panier`, `prix_produit_panier`, `dscription_produit_panier`, `id_clien`, `quantit`, `statut`) VALUES
-(19, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 0, 'revenir'),
-(18, 15, 'Hp', 'kindpng_4211048.png', 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 0, 'revenir'),
-(17, 15, 'Hp', 'kindpng_4211048.png', 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 0, 'revenir'),
-(16, 19, 'Acus', 'bureau2.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 0, 'revenir'),
-(14, 15, 'Hp', 'kindpng_4211048.png', 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 0, 'revenir'),
-(15, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 0, 'revenir'),
-(13, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 0, 'revenir'),
-(12, 15, 'Hp', 'kindpng_4211048.png', 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 0, 'revenir'),
-(20, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'revenir'),
-(21, 4, 'PC GAMER', 'e4016ea1a22d8844510adb365c924938_Rishop_ma.png', 11290, 'PC GAMER LEGION Y530 CORE i5 LENOVO', 1, 1, 'revenir'),
-(22, 18, 'Acus', 'bureau3.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'revenir'),
-(23, 15, 'Hp', 'kindpng_4211048.png', 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 1, 'revenir'),
-(24, 19, 'Acus', 'bureau2.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 1, 'revenir'),
-(25, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'revenir'),
-(26, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'revenir'),
-(27, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'revenir'),
-(28, 18, 'Acus', 'bureau3.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'instance'),
-(29, 17, 'Asus', 'kindpng_450523.png', 2000, 'Asus Travelmate P414-51 14Â´Â´ i51135G7/16GB/512GB SSD Laptop', 1, 1, 'instance'),
-(30, 19, 'Acus', 'bureau2.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 1, 'instance'),
-(31, 4, 'PC GAMER', 'e4016ea1a22d8844510adb365c924938_Rishop_ma.png', 11290, 'PC GAMER LEGION Y530 CORE i5 LENOVO', 1, 1, 'instance'),
-(32, 15, 'Hp', 'kindpng_4211048.png', 1000, 'HP, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive, Windows 10.\r\n', 1, 1, 'instance'),
-(33, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 1, 1, 'instance');
+(49, 14, 'Asus', 'mini3.jpg', 16000, 'Asus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 5, 3, 'revenir'),
+(48, 18, 'Acus', 'bureau3.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 5, 1, 'revenir'),
+(47, 18, 'Acus', 'bureau3.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 5, 1, 'revenir'),
+(46, 18, 'Acus', 'bureau3.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 5, 1, 'revenir'),
+(45, 18, 'Acus', 'bureau3.jpg', 3500, 'Acus, 15.6\" HD , Intel Core i5-1035G1, 12GB , 1TB Hard Drive,Windows 10.\r\n', 5, 1, 'revenir');
+
+--
+-- Déclencheurs `produit_panier`
+--
+DROP TRIGGER IF EXISTS `modifier_gtt`;
+DELIMITER $$
+CREATE TRIGGER `modifier_gtt` BEFORE INSERT ON `produit_panier` FOR EACH ROW begin
+	if new.statut ="instance" then 
+		update produits_ordinateur set quantite=quantite-new.quantit where new.id_produit_panier=id_ordinateur;
+	end if ;
+end
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `modifier_gtt_md`;
+DELIMITER $$
+CREATE TRIGGER `modifier_gtt_md` BEFORE UPDATE ON `produit_panier` FOR EACH ROW begin
+	if new.statut ="revenir" then 
+		update produits_ordinateur set quantite=quantite+new.quantit where new.id_produit_panier=id_ordinateur;
+	elseif new.statut="instance" then 
+		update produits_ordinateur set quantite=quantite-new.quantit where new.id_produit_panier=id_ordinateur;
+	end if ;
+end
+$$
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
